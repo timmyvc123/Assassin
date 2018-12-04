@@ -16,9 +16,15 @@
 		A515AEDB2188EB7200A2F2AE /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEDA2188EB7200A2F2AE /* logInViewController.swift */; };
 		A515AEDD2188ED7C00A2F2AE /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEDC2188ED7C00A2F2AE /* registerViewController.swift */; };
 		A515AEDF2188EFEB00A2F2AE /* menuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */; };
-		A515AEE12188F18E00A2F2AE /* createGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEE02188F18E00A2F2AE /* createGameViewController.swift */; };
-		A515AEE32188F19E00A2F2AE /* currentGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEE22188F19E00A2F2AE /* currentGameViewController.swift */; };
-		A515AEE52188F20D00A2F2AE /* joinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEE42188F20D00A2F2AE /* joinGameViewController.swift */; };
+		A5D434C021B5FB9F0075B08A /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434BF21B5FB9F0075B08A /* profileViewController.swift */; };
+		A5D434C221B5FC820075B08A /* joinCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C121B5FC820075B08A /* joinCreateViewController.swift */; };
+		A5D434C421B5FC920075B08A /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C321B5FC920075B08A /* settingsViewController.swift */; };
+		A5D434C721B6018A0075B08A /* targetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C621B6018A0075B08A /* targetViewController.swift */; };
+		A5D434C921B601E00075B08A /* rulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C821B601E00075B08A /* rulesViewController.swift */; };
+		A5D434CB21B6022F0075B08A /* reportKillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434CA21B6022F0075B08A /* reportKillViewController.swift */; };
+		A5D434CD21B603A80075B08A /* otherUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434CC21B603A80075B08A /* otherUsersViewController.swift */; };
+		A5D434CF21B603C90075B08A /* calendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434CE21B603C90075B08A /* calendarViewController.swift */; };
+		A5D434D121B603EB0075B08A /* leaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434D021B603EB0075B08A /* leaderboardViewController.swift */; };
 		A5E75686219CE94600B80F90 /* MyGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E75685219CE94600B80F90 /* MyGamesViewController.swift */; };
 		FE46C1880C9AF253805B8F51 /* Pods_Assassin2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0E6FD5DD7B8DB1FF3E18D0 /* Pods_Assassin2.framework */; };
 /* End PBXBuildFile section */
@@ -36,9 +42,15 @@
 		A515AEDA2188EB7200A2F2AE /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		A515AEDC2188ED7C00A2F2AE /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 		A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuViewController.swift; sourceTree = "<group>"; };
-		A515AEE02188F18E00A2F2AE /* createGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createGameViewController.swift; sourceTree = "<group>"; };
-		A515AEE22188F19E00A2F2AE /* currentGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentGameViewController.swift; sourceTree = "<group>"; };
-		A515AEE42188F20D00A2F2AE /* joinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = joinGameViewController.swift; sourceTree = "<group>"; };
+		A5D434BF21B5FB9F0075B08A /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileViewController.swift; path = "/Users/timmy/Desktop/Assassin2-master-3/Assassin2/Controller/profileViewController.swift"; sourceTree = "<absolute>"; };
+		A5D434C121B5FC820075B08A /* joinCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = joinCreateViewController.swift; sourceTree = "<group>"; };
+		A5D434C321B5FC920075B08A /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
+		A5D434C621B6018A0075B08A /* targetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = targetViewController.swift; sourceTree = "<group>"; };
+		A5D434C821B601E00075B08A /* rulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rulesViewController.swift; sourceTree = "<group>"; };
+		A5D434CA21B6022F0075B08A /* reportKillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reportKillViewController.swift; sourceTree = "<group>"; };
+		A5D434CC21B603A80075B08A /* otherUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = otherUsersViewController.swift; sourceTree = "<group>"; };
+		A5D434CE21B603C90075B08A /* calendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarViewController.swift; sourceTree = "<group>"; };
+		A5D434D021B603EB0075B08A /* leaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leaderboardViewController.swift; sourceTree = "<group>"; };
 		A5E75685219CE94600B80F90 /* MyGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGamesViewController.swift; sourceTree = "<group>"; };
 		D52FC40DEB192A820FFC7BBA /* Pods-Assassin2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assassin2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assassin2/Pods-Assassin2.debug.xcconfig"; sourceTree = "<group>"; };
 		E08E6DC9F2D18C4C03409718 /* Pods-Assassin2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assassin2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assassin2/Pods-Assassin2.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,17 +127,31 @@
 		A59E728E2193AF77008CA63D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A5E75685219CE94600B80F90 /* MyGamesViewController.swift */,
+				A5D434C521B600D60075B08A /* SideBarVCs */,
 				A515AECA2188E8FA00A2F2AE /* ViewController.swift */,
-				A515AEE42188F20D00A2F2AE /* joinGameViewController.swift */,
-				A515AEE02188F18E00A2F2AE /* createGameViewController.swift */,
-				A515AEE22188F19E00A2F2AE /* currentGameViewController.swift */,
-				A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */,
 				A515AEDA2188EB7200A2F2AE /* logInViewController.swift */,
-				75EEB82B2199003200125AEB /* GameManager.swift */,
 				A515AEDC2188ED7C00A2F2AE /* registerViewController.swift */,
+				A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */,
+				A5E75685219CE94600B80F90 /* MyGamesViewController.swift */,
+				75EEB82B2199003200125AEB /* GameManager.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5D434C521B600D60075B08A /* SideBarVCs */ = {
+			isa = PBXGroup;
+			children = (
+				A5D434BF21B5FB9F0075B08A /* profileViewController.swift */,
+				A5D434CA21B6022F0075B08A /* reportKillViewController.swift */,
+				A5D434C121B5FC820075B08A /* joinCreateViewController.swift */,
+				A5D434C321B5FC920075B08A /* settingsViewController.swift */,
+				A5D434C621B6018A0075B08A /* targetViewController.swift */,
+				A5D434C821B601E00075B08A /* rulesViewController.swift */,
+				A5D434CC21B603A80075B08A /* otherUsersViewController.swift */,
+				A5D434CE21B603C90075B08A /* calendarViewController.swift */,
+				A5D434D021B603EB0075B08A /* leaderboardViewController.swift */,
+			);
+			path = SideBarVCs;
 			sourceTree = "<group>";
 		};
 		D3F34A3AD486E11A6D2FCA83 /* Frameworks */ = {
@@ -250,15 +276,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A515AEE52188F20D00A2F2AE /* joinGameViewController.swift in Sources */,
 				75EEB82C2199003200125AEB /* GameManager.swift in Sources */,
+				A5D434C021B5FB9F0075B08A /* profileViewController.swift in Sources */,
 				A515AECB2188E8FA00A2F2AE /* ViewController.swift in Sources */,
 				A515AEDB2188EB7200A2F2AE /* logInViewController.swift in Sources */,
+				A5D434C221B5FC820075B08A /* joinCreateViewController.swift in Sources */,
+				A5D434C421B5FC920075B08A /* settingsViewController.swift in Sources */,
+				A5D434CD21B603A80075B08A /* otherUsersViewController.swift in Sources */,
+				A5D434C921B601E00075B08A /* rulesViewController.swift in Sources */,
+				A5D434C721B6018A0075B08A /* targetViewController.swift in Sources */,
 				A5E75686219CE94600B80F90 /* MyGamesViewController.swift in Sources */,
-				A515AEE12188F18E00A2F2AE /* createGameViewController.swift in Sources */,
-				A515AEE32188F19E00A2F2AE /* currentGameViewController.swift in Sources */,
+				A5D434CB21B6022F0075B08A /* reportKillViewController.swift in Sources */,
 				A515AEC92188E8FA00A2F2AE /* AppDelegate.swift in Sources */,
 				A515AEDD2188ED7C00A2F2AE /* registerViewController.swift in Sources */,
+				A5D434CF21B603C90075B08A /* calendarViewController.swift in Sources */,
+				A5D434D121B603EB0075B08A /* leaderboardViewController.swift in Sources */,
 				A515AEDF2188EFEB00A2F2AE /* menuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,7 +23,7 @@ class MyGamesViewController: UIViewController {
     @IBOutlet weak var menuCurveImageView: UIImageView!
     
     @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var profileImageViewLabel: UILabel!
+    @IBOutlet weak var profileButton: UIButton!
     
     @IBOutlet weak var targetButton: UIButton!
     @IBOutlet weak var targetLabel: UILabel!
@@ -150,7 +150,7 @@ class MyGamesViewController: UIViewController {
         
         UIView.animate(withDuration: 0.4, delay: 0.2, options: [.curveEaseOut, .allowUserInteraction], animations: {
             self.profileImageView.transform = .identity
-            self.profileImageViewLabel.transform = .identity
+            self.profileButton.transform = .identity
             self.showIcon(button: self.targetButton, label: self.targetLabel)
             
             self.showIcon(button: self.settingsButton, label: self.settingsLabel)
@@ -165,7 +165,7 @@ class MyGamesViewController: UIViewController {
         
         UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: {
             self.profileImageView.transform = CGAffineTransform(translationX: +self.menuView.frame.width, y: 0)
-            self.profileImageViewLabel.transform = CGAffineTransform(translationX: +self.menuView.frame.width, y: 0)
+            self.profileButton.transform = CGAffineTransform(translationX: +self.menuView.frame.width, y: 0)
             self.hideIcon(button: self.targetButton, label: self.targetLabel)
             
             self.hideIcon(button: self.settingsButton, label: self.settingsLabel)

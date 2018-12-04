@@ -26,15 +26,20 @@ class menuViewController: UIViewController {
     @IBOutlet weak var createOrJoinButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var signOutButton: UIButton!
+    
+    
  
     
     // side menu label outlets
-    @IBOutlet weak var profileImageViewLabel: UILabel!
     @IBOutlet weak var createOrJoinLabel: UILabel!
     @IBOutlet weak var settingsLabel: UILabel!
     @IBOutlet weak var signOutLabel: UILabel!
 
     
+    // misc
+    @IBOutlet weak var tempButton: UIButton!
+    
+    @IBOutlet weak var profileButton: UIButton!
     
     
     
@@ -136,7 +141,7 @@ class menuViewController: UIViewController {
         
         UIView.animate(withDuration: 0.4, delay: 0.1, options: [.curveEaseOut, .allowUserInteraction], animations: {
             self.profileImageView.transform = .identity
-            self.profileImageViewLabel.transform = .identity
+            self.profileButton.transform = .identity
             self.showIcon(button: self.signOutButton, label: self.signOutLabel)
         })
 
@@ -150,7 +155,7 @@ class menuViewController: UIViewController {
         
         UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: {
             self.profileImageView.transform = CGAffineTransform(translationX: +self.menuView.frame.width, y: 0)
-            self.profileImageViewLabel.transform = CGAffineTransform(translationX: +self.menuView.frame.width, y: 0)
+            self.profileButton.transform = CGAffineTransform(translationX: +self.menuView.frame.width, y: 0)
             
             self.hideIcon(button: self.signOutButton, label: self.signOutLabel)
             
