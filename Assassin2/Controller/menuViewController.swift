@@ -9,8 +9,9 @@
 import UIKit
 import Parse
 
-class menuViewController: UIViewController {
+class menuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
     
     private enum MenuState {
         case hidden
@@ -58,6 +59,8 @@ class menuViewController: UIViewController {
         hideMenu()
 
         // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,6 +101,25 @@ class menuViewController: UIViewController {
         }
     }
     
+    
+    
+    // TABLE VIEW
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "gameCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? TableViewCell  else {
+            fatalError("The dequeued cell is not an instance of TableViewCell")
+        }
+        
+        cell.gameNameLabel.text = "poop"
+        return cell
+    }
     
     @IBAction func menuTapped(_ sender: Any) {
         if state == .hidden {
@@ -205,5 +227,12 @@ class menuViewController: UIViewController {
     }
     */
 
+}
+
+class TableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var gameNameLabel: UILabel!
+    
+    
 }
 

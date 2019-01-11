@@ -9,7 +9,11 @@
 import UIKit
 import Parse
 
-class MyGamesViewController: UIViewController {
+class MyGamesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     
     private enum MenuState {
         case hidden
@@ -64,6 +68,8 @@ class MyGamesViewController: UIViewController {
         hideMenu()
         
         // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,6 +108,7 @@ class MyGamesViewController: UIViewController {
                          completion: nil)
             
         }
+        
     }
     @IBAction func menuTapped(_ sender: Any) {
         if state == .hidden {
@@ -207,6 +214,20 @@ class MyGamesViewController: UIViewController {
         
     }
     
+    // TABLE VIEW
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "messageCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MessageTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of TableViewCell")
+        }
+        cell.messageLabel.text = "Message"
+        return cell
+    
+    }
     
     
     
@@ -222,5 +243,12 @@ class MyGamesViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+}
+
+class MessageTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var messageLabel: UILabel!
+    
     
 }
