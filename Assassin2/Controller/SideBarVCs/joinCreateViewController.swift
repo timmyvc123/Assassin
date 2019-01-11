@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class joinCreateViewController: UIViewController {
 
@@ -21,7 +22,28 @@ class joinCreateViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBOutlet weak var gamePassword: UITextField!
+    @IBOutlet weak var gameName: UITextField!
+    @IBAction func createGame(_ sender: Any) {
+        let gameManager = GameManager()
+        var gameAttributes: [String: Any] = [:]
+        gameAttributes["GameName"] = gameName.text
+        gameAttributes["GamePassword"] = gamePassword.text
+        gameAttributes["CommissionerID"] = PFUser.current()
+        gameManager.createGame(attributes: gameAttributes) { (success, error) in
+            if success {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
+                let viewController = storyboard.instantiateViewController(withIdentifier: "CurrentGame") as? MyGamesViewController
+                
+                self.navigationController?.pushViewController(viewController!, animated: true)
+            } else if error != nil {
+                print(error)
+            }
+        }
+    }
+
+    
     /*
     // MARK: - Navigation
 

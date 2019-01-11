@@ -56,7 +56,13 @@ class menuViewController: UIViewController {
         coverScreenButton.isHidden = true
         menuCurveImageView.image = #imageLiteral(resourceName: "MenuCurve")
         hideMenu()
-
+        
+        
+        let gm = GameManager()
+        gm.getGame(from: PFUser.current()!) { (game, error) in
+            print("Game:")
+            print(game)
+        }
         // Do any additional setup after loading the view.
     }
     
