@@ -42,7 +42,7 @@
 		A515AEDA2188EB7200A2F2AE /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		A515AEDC2188ED7C00A2F2AE /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 		A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuViewController.swift; sourceTree = "<group>"; };
-		A5D434BF21B5FB9F0075B08A /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileViewController.swift; path = /Users/matthewshober/workspace/Assassin/Assassin2/Controller/profileViewController.swift; sourceTree = "<absolute>"; };
+		A5D434BF21B5FB9F0075B08A /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileViewController.swift; path = ../profileViewController.swift; sourceTree = "<group>"; };
 		A5D434C121B5FC820075B08A /* joinCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = joinCreateViewController.swift; sourceTree = "<group>"; };
 		A5D434C321B5FC920075B08A /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		A5D434C621B6018A0075B08A /* targetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = targetViewController.swift; sourceTree = "<group>"; };
