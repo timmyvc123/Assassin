@@ -59,9 +59,12 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     private var state: MenuState = .hidden
 
+    var game: PFObject!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("\(#function) for Menu")
+        self.title = game["GameName"] as? String
         menuView.isHidden = true
         coverScreenButton.isHidden = true
         menuCurveImageView.image = #imageLiteral(resourceName: "MenuCurve")
@@ -75,16 +78,16 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let currentUser = PFUser.current() {
-            print("Getting games")
-            GameManager().getGame(from: currentUser) { (game, error) in
-                if let error = error {
-                    print("*** error fetching + \(error) ***")
-                } else if let game = game {
-                    print("*** have profile object + id: \(game) ***")
-                }
-            }
-        }
+//        if let currentUser = PFUser.current() {
+//            print("Getting games")
+//            GameManager().getGames(from: currentUser) { (game, error) in
+//                if let error = error {
+//                    print("*** error fetching + \(error) ***")
+//                } else if let game = game {
+//                    print("*** have profile object + id: \(game) ***")
+//                }
+//            }
+//        }
         print("\(#function) for Menu")
         
     }

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		75EEB82C2199003200125AEB /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEB82B2199003200125AEB /* GameManager.swift */; };
+		7599565F21E93A3300655747 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7599565E21E93A3300655747 /* JoinGameViewController.swift */; };
+		75EEB82C2199003200125AEB /* PFUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEB82B2199003200125AEB /* PFUser.swift */; };
 		A515AEC92188E8FA00A2F2AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEC82188E8FA00A2F2AE /* AppDelegate.swift */; };
 		A515AECB2188E8FA00A2F2AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AECA2188E8FA00A2F2AE /* ViewController.swift */; };
 		A515AECE2188E8FA00A2F2AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A515AECC2188E8FA00A2F2AE /* Main.storyboard */; };
@@ -17,7 +18,7 @@
 		A515AEDD2188ED7C00A2F2AE /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEDC2188ED7C00A2F2AE /* registerViewController.swift */; };
 		A515AEDF2188EFEB00A2F2AE /* menuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */; };
 		A5D434C021B5FB9F0075B08A /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434BF21B5FB9F0075B08A /* profileViewController.swift */; };
-		A5D434C221B5FC820075B08A /* joinCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C121B5FC820075B08A /* joinCreateViewController.swift */; };
+		A5D434C221B5FC820075B08A /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C121B5FC820075B08A /* CreateGameViewController.swift */; };
 		A5D434C421B5FC920075B08A /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C321B5FC920075B08A /* settingsViewController.swift */; };
 		A5D434C721B6018A0075B08A /* targetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C621B6018A0075B08A /* targetViewController.swift */; };
 		A5D434C921B601E00075B08A /* rulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C821B601E00075B08A /* rulesViewController.swift */; };
@@ -30,7 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		75EEB82B2199003200125AEB /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		7599565E21E93A3300655747 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
+		75EEB82B2199003200125AEB /* PFUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFUser.swift; sourceTree = "<group>"; };
 		9C0E6FD5DD7B8DB1FF3E18D0 /* Pods_Assassin2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assassin2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A515AEC52188E8FA00A2F2AE /* Assassin2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assassin2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A515AEC82188E8FA00A2F2AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,8 +44,8 @@
 		A515AEDA2188EB7200A2F2AE /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		A515AEDC2188ED7C00A2F2AE /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 		A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuViewController.swift; sourceTree = "<group>"; };
-		A5D434BF21B5FB9F0075B08A /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileViewController.swift; path = "/Users/timmy/Desktop/Assassin2-master-3/Assassin2/Controller/profileViewController.swift"; sourceTree = "<absolute>"; };
-		A5D434C121B5FC820075B08A /* joinCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = joinCreateViewController.swift; sourceTree = "<group>"; };
+		A5D434BF21B5FB9F0075B08A /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileViewController.swift; path = ../profileViewController.swift; sourceTree = "<group>"; };
+		A5D434C121B5FC820075B08A /* CreateGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
 		A5D434C321B5FC920075B08A /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		A5D434C621B6018A0075B08A /* targetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = targetViewController.swift; sourceTree = "<group>"; };
 		A5D434C821B601E00075B08A /* rulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rulesViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +135,7 @@
 				A515AEDC2188ED7C00A2F2AE /* registerViewController.swift */,
 				A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */,
 				A5E75685219CE94600B80F90 /* MyGamesViewController.swift */,
-				75EEB82B2199003200125AEB /* GameManager.swift */,
+				75EEB82B2199003200125AEB /* PFUser.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,13 +145,14 @@
 			children = (
 				A5D434BF21B5FB9F0075B08A /* profileViewController.swift */,
 				A5D434CA21B6022F0075B08A /* reportKillViewController.swift */,
-				A5D434C121B5FC820075B08A /* joinCreateViewController.swift */,
+				A5D434C121B5FC820075B08A /* CreateGameViewController.swift */,
 				A5D434C321B5FC920075B08A /* settingsViewController.swift */,
 				A5D434C621B6018A0075B08A /* targetViewController.swift */,
 				A5D434C821B601E00075B08A /* rulesViewController.swift */,
 				A5D434CC21B603A80075B08A /* otherUsersViewController.swift */,
 				A5D434CE21B603C90075B08A /* calendarViewController.swift */,
 				A5D434D021B603EB0075B08A /* leaderboardViewController.swift */,
+				7599565E21E93A3300655747 /* JoinGameViewController.swift */,
 			);
 			path = SideBarVCs;
 			sourceTree = "<group>";
@@ -276,11 +279,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75EEB82C2199003200125AEB /* GameManager.swift in Sources */,
+				75EEB82C2199003200125AEB /* PFUser.swift in Sources */,
 				A5D434C021B5FB9F0075B08A /* profileViewController.swift in Sources */,
+				7599565F21E93A3300655747 /* JoinGameViewController.swift in Sources */,
 				A515AECB2188E8FA00A2F2AE /* ViewController.swift in Sources */,
 				A515AEDB2188EB7200A2F2AE /* logInViewController.swift in Sources */,
-				A5D434C221B5FC820075B08A /* joinCreateViewController.swift in Sources */,
+				A5D434C221B5FC820075B08A /* CreateGameViewController.swift in Sources */,
 				A5D434C421B5FC920075B08A /* settingsViewController.swift in Sources */,
 				A5D434CD21B603A80075B08A /* otherUsersViewController.swift in Sources */,
 				A5D434C921B601E00075B08A /* rulesViewController.swift in Sources */,

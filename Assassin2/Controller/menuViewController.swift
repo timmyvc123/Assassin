@@ -49,6 +49,7 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private var state: MenuState = .hidden
 
     
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,27 +62,71 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
+        
+//        let user = User.current()
+//        print("games")
+//        print(user!["games"])
+        
+//        getGames()
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        self.tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+
     }
+    
+    func getGames() {
+        games = []
+        tableView.reloadData()
+        if let currentUser = PFUser.current() {
+        print("Getting games")
+            currentUser.getGames() { (game) in
+                self.games.append(game)
+                self.tableView.beginUpdates()
+                self.tableView.insertRows(at: [IndexPath(row: self.games.count-1, section: 0)], with: .automatic)
+                self.tableView.endUpdates()
+            }
+        }
+    }
+    
+    @objc func handleRefresh() {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service, for example...
+        
+        // Simply adding an object to the data source for this example
+        print("Refresh")
+
+        guard let currentUser = PFUser.current() else { return }
+        
+        currentUser.getGames() { (game) in
+            if !self.games.contains(game) {
+                self.games.append(game)
+                self.tableView.beginUpdates()
+                self.tableView.insertRows(at: [IndexPath(row: self.games.count-1, section: 0)], with: .automatic)
+                self.tableView.endUpdates()
+            }
+            
+        }
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
+    
+    var games: [PFObject] = []
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if let currentUser = PFUser.current() {
-            print("Getting games")
-            GameManager().getGame(from: currentUser) { (game, error) in
-                if let error = error {
-                    print("*** error fetching + \(error) ***")
-                } else if let game = game {
-                    print("*** have profile object + id: \(game) ***")
-                }
-            }
-        }
+        getGames()
         print("\(#function) for Menu")
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         print("\(#function) for Menu")
 
     }
@@ -108,7 +153,8 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        print("Setting Number of Rows as \(games.count)")
+        return games.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -117,9 +163,29 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             fatalError("The dequeued cell is not an instance of TableViewCell")
         }
         
-        cell.gameNameLabel.text = "poop"
+        cell.gameNameLabel.text = games[indexPath.row]["GameName"] as? String
         return cell
     }
+    
+    var valueToPass: PFObject!
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Get Cell Label
+        
+        valueToPass = self.games[indexPath.row]
+        performSegue(withIdentifier: "ToGameSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ToGameSegue") {
+            // initialize new view controller and cast it as your view controller
+            let viewController = segue.destination as! MyGamesViewController
+            // your new view controller should have property that will store passed value
+            viewController.game = valueToPass
+        }
+    }
+
+    
     
     @IBAction func menuTapped(_ sender: Any) {
         if state == .hidden {
