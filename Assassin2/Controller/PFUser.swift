@@ -19,12 +19,11 @@ extension PFUser {
             if !game.isDataAvailable {
                 print("Data is not in local storage; fetching from database")
             }
-            game.fetchIfNeededInBackground { (game, error) in
+            game.fetchInBackground { (game, error) in
                 guard let game = game else { print(error!); return }
                 
                 result(game)
             }
-
         }
     }
     
@@ -50,7 +49,7 @@ extension PFUser {
     
     func joinGame(gameID: String, gamePassword: String, result: @escaping PFBooleanResultBlock) {
         let query = PFQuery(className: "Games")
-
+        
         query.getObjectInBackground(withId: gameID) { (game, error) in
             guard game?["GamePassword"] as? String == gamePassword else {
                 result(false, error)
@@ -58,12 +57,23 @@ extension PFUser {
                 
             }
             
+            
             self.add(game!, forKey: "games")
+            
             self.saveInBackground(block: result)
             
             game?.add(self, forKey: "PlayerList")
             game?.saveInBackground()
         }
+    }
+}
+
+class GameManager {
+    func getPlayers() {
+        let query = PFQuery(className: "Games")
+
+
+        
     }
 }
 

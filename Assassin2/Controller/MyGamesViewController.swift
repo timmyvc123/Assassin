@@ -232,10 +232,34 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     }
     
+    @IBAction func toPlayerList(_ sender: Any) {
+         performSegue(withIdentifier: "ToPlayersSegue", sender: self)
+    }
     
     
-    
-    
+   
+
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ToPlayersSegue") {
+            // initialize new view controller and cast it as your view controller
+            let viewController = segue.destination as! otherUsersViewController
+            // your new view controller should have property that will store passed value
+
+            let players = game["PlayerList"] as! [PFObject]
+            
+//            var playerList: [PFObject] = []
+//            for player in players {
+//                player.fetchInBackground { (player, error) in
+//                    guard let player = player else { print(error!); return }
+//                    playerList.append(player)
+//                }
+//            }
+//
+            viewController.players = players
+        }
+    }
+
     
     /*
      // MARK: - Navigation

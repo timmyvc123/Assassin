@@ -18,6 +18,8 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         case visible
     }
     
+    private var state: MenuState = .hidden
+
     // side menu outlets
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var coverScreenButton: UIButton!
@@ -46,7 +48,6 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     
-    private var state: MenuState = .hidden
 
     
     private let refreshControl = UIRefreshControl()
@@ -107,7 +108,6 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.tableView.insertRows(at: [IndexPath(row: self.games.count-1, section: 0)], with: .automatic)
                 self.tableView.endUpdates()
             }
-            
         }
         
         self.tableView.reloadData()
@@ -162,7 +162,19 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? TableViewCell  else {
             fatalError("The dequeued cell is not an instance of TableViewCell")
         }
+
+        let players = games[indexPath.row]["PlayerList"] as! [PFObject]
+//        players.first.
         
+        for player in players {
+            player.fetchInBackground { (player, error) in
+                guard let player = player else { print(error!); return }
+                    print(player["username"])
+                
+            }
+        }
+        cell.playerCount.text = String("Players: \(players.count)")
+//        cell.playerCount.text = players.first?["username"] as! String
         cell.gameNameLabel.text = games[indexPath.row]["GameName"] as? String
         return cell
     }
@@ -298,6 +310,8 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var gameNameLabel: UILabel!
+    @IBOutlet weak var playerCount: UILabel!
+
     
     
 }

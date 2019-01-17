@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/timmy/Desktop/Assassin2-master-3/Assassin2/Controller/profileViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:Assassin2.xcodeproj">
    </FileRef>
    <FileRef

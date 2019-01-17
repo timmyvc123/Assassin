@@ -24,6 +24,14 @@ class JoinGameViewController: UIViewController {
             } else {
                 if let error = error as NSError? {
                     print(error.userInfo["code"]!) }
+                    let alertController = UIAlertController(title: "Error",
+                                                        message: "Game does not exist",
+                                                        preferredStyle: .alert)
+                    let retryAction = UIAlertAction(title: "Retry", style: .default, handler: nil)
+                    alertController.addAction(retryAction)
+                    DispatchQueue.main.async {
+                        self.present(alertController, animated: true, completion:  nil)
+                    }
                 }
         })
       
