@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63AC9C8121F0E28400D1A88E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC9C8021F0E28400D1A88E /* CustomButton.swift */; };
+		63AC9C8321F0E3A000D1A88E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC9C8221F0E3A000D1A88E /* CustomTextField.swift */; };
 		7599565F21E93A3300655747 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7599565E21E93A3300655747 /* JoinGameViewController.swift */; };
 		75EEB82C2199003200125AEB /* PFUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEB82B2199003200125AEB /* PFUser.swift */; };
 		A515AEC92188E8FA00A2F2AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEC82188E8FA00A2F2AE /* AppDelegate.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63AC9C8021F0E28400D1A88E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = CustomView/CustomButton.swift; sourceTree = "<group>"; };
+		63AC9C8221F0E3A000D1A88E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = CustomView/CustomTextField.swift; sourceTree = "<group>"; };
 		7599565E21E93A3300655747 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
 		75EEB82B2199003200125AEB /* PFUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFUser.swift; sourceTree = "<group>"; };
 		9C0E6FD5DD7B8DB1FF3E18D0 /* Pods_Assassin2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assassin2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +140,8 @@
 				A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */,
 				A5E75685219CE94600B80F90 /* MyGamesViewController.swift */,
 				75EEB82B2199003200125AEB /* PFUser.swift */,
+				63AC9C8021F0E28400D1A88E /* CustomButton.swift */,
+				63AC9C8221F0E3A000D1A88E /* CustomTextField.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,8 +287,10 @@
 			files = (
 				75EEB82C2199003200125AEB /* PFUser.swift in Sources */,
 				A5D434C021B5FB9F0075B08A /* profileViewController.swift in Sources */,
+				63AC9C8121F0E28400D1A88E /* CustomButton.swift in Sources */,
 				7599565F21E93A3300655747 /* JoinGameViewController.swift in Sources */,
 				A515AECB2188E8FA00A2F2AE /* ViewController.swift in Sources */,
+				63AC9C8321F0E3A000D1A88E /* CustomTextField.swift in Sources */,
 				A515AEDB2188EB7200A2F2AE /* logInViewController.swift in Sources */,
 				A5D434C221B5FC820075B08A /* CreateGameViewController.swift in Sources */,
 				A5D434C421B5FC920075B08A /* settingsViewController.swift in Sources */,
