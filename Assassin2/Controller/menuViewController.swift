@@ -64,11 +64,7 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.delegate = self
         
-//        let user = User.current()
-//        print("games")
-//        print(user!["games"])
-        
-//        getGames()
+
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshControl
         } else {
