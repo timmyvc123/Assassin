@@ -111,7 +111,7 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
-    var games: [PFObject] = []
+    var games: [Game] = []
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -159,23 +159,14 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             fatalError("The dequeued cell is not an instance of TableViewCell")
         }
 
-        let players = games[indexPath.row]["PlayerList"] as! [PFObject]
-//        players.first.
-        
-        for player in players {
-            player.fetchInBackground { (player, error) in
-                guard let player = player else { print(error!); return }
-                    print(player["username"])
-                
-            }
-        }
+        guard let players = games[indexPath.row].players else { return cell }
+
         cell.playerCount.text = String("Players: \(players.count)")
-//        cell.playerCount.text = players.first?["username"] as! String
-        cell.gameNameLabel.text = games[indexPath.row]["GameName"] as? String
+        cell.gameNameLabel.text = games[indexPath.row].name
         return cell
     }
     
-    var valueToPass: PFObject!
+    var valueToPass: Game!
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Get Cell Label

@@ -6,11 +6,18 @@
 //
 
 import UIKit
+import Parse
 
 class profileViewController: UIViewController {
 
+    var user: PFUser!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        user = PFUser.current()
+        print("Name: \(String(describing: user.name))")
+        print("Username: \(String(describing: user.username))")
+        print("Email: \(String(describing: user.email))")
 
         // Do any additional setup after loading the view.
     }

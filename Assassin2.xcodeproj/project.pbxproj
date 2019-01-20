@@ -10,7 +10,8 @@
 		63AC9C8121F0E28400D1A88E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC9C8021F0E28400D1A88E /* CustomButton.swift */; };
 		63AC9C8321F0E3A000D1A88E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC9C8221F0E3A000D1A88E /* CustomTextField.swift */; };
 		7599565F21E93A3300655747 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7599565E21E93A3300655747 /* JoinGameViewController.swift */; };
-		75EEB82C2199003200125AEB /* PFUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEB82B2199003200125AEB /* PFUser.swift */; };
+		75EEB82C2199003200125AEB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEB82B2199003200125AEB /* User.swift */; };
+		75F377FF21F3F6E5003203DE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F377FE21F3F6E5003203DE /* Game.swift */; };
 		A515AEC92188E8FA00A2F2AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEC82188E8FA00A2F2AE /* AppDelegate.swift */; };
 		A515AECB2188E8FA00A2F2AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AECA2188E8FA00A2F2AE /* ViewController.swift */; };
 		A515AECE2188E8FA00A2F2AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A515AECC2188E8FA00A2F2AE /* Main.storyboard */; };
@@ -36,7 +37,8 @@
 		63AC9C8021F0E28400D1A88E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = CustomView/CustomButton.swift; sourceTree = "<group>"; };
 		63AC9C8221F0E3A000D1A88E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = CustomView/CustomTextField.swift; sourceTree = "<group>"; };
 		7599565E21E93A3300655747 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
-		75EEB82B2199003200125AEB /* PFUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFUser.swift; sourceTree = "<group>"; };
+		75EEB82B2199003200125AEB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		75F377FE21F3F6E5003203DE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		9C0E6FD5DD7B8DB1FF3E18D0 /* Pods_Assassin2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assassin2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A515AEC52188E8FA00A2F2AE /* Assassin2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assassin2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A515AEC82188E8FA00A2F2AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		75F3780021F3F8A4003203DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				75F377FE21F3F6E5003203DE /* Game.swift */,
+				75EEB82B2199003200125AEB /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A515AEBC2188E8FA00A2F2AE = {
 			isa = PBXGroup;
 			children = (
@@ -105,20 +116,13 @@
 			isa = PBXGroup;
 			children = (
 				A515AEC82188E8FA00A2F2AE /* AppDelegate.swift */,
-				A59E728C2193AF57008CA63D /* Model */,
+				75F3780021F3F8A4003203DE /* Model */,
 				A59E728D2193AF6C008CA63D /* View */,
 				A59E728E2193AF77008CA63D /* Controller */,
 				A515AECF2188E8FC00A2F2AE /* Assets.xcassets */,
 				A515AED42188E8FC00A2F2AE /* Info.plist */,
 			);
 			path = Assassin2;
-			sourceTree = "<group>";
-		};
-		A59E728C2193AF57008CA63D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		A59E728D2193AF6C008CA63D /* View */ = {
@@ -139,7 +143,6 @@
 				A515AEDC2188ED7C00A2F2AE /* registerViewController.swift */,
 				A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */,
 				A5E75685219CE94600B80F90 /* MyGamesViewController.swift */,
-				75EEB82B2199003200125AEB /* PFUser.swift */,
 				63AC9C8021F0E28400D1A88E /* CustomButton.swift */,
 				63AC9C8221F0E3A000D1A88E /* CustomTextField.swift */,
 			);
@@ -285,7 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75EEB82C2199003200125AEB /* PFUser.swift in Sources */,
+				75EEB82C2199003200125AEB /* User.swift in Sources */,
 				A5D434C021B5FB9F0075B08A /* profileViewController.swift in Sources */,
 				63AC9C8121F0E28400D1A88E /* CustomButton.swift in Sources */,
 				7599565F21E93A3300655747 /* JoinGameViewController.swift in Sources */,
@@ -296,6 +299,7 @@
 				A5D434C421B5FC920075B08A /* settingsViewController.swift in Sources */,
 				A5D434CD21B603A80075B08A /* otherUsersViewController.swift in Sources */,
 				A5D434C921B601E00075B08A /* rulesViewController.swift in Sources */,
+				75F377FF21F3F6E5003203DE /* Game.swift in Sources */,
 				A5D434C721B6018A0075B08A /* targetViewController.swift in Sources */,
 				A5E75686219CE94600B80F90 /* MyGamesViewController.swift in Sources */,
 				A5D434CB21B6022F0075B08A /* reportKillViewController.swift in Sources */,

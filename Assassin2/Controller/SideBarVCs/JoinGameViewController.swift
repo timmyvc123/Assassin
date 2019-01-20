@@ -17,22 +17,29 @@ class JoinGameViewController: UIViewController {
     @IBAction func joinGame(_ sender: Any) {
         
         guard let id = gameName.text, let password = gamePassword.text else { return }
+        
         PFUser.current()?.joinGame(gameID: id, gamePassword: password, result: { (success, error) in
+
             if success {
-                print("Success")
-                self.navigationController?.popToRootViewController(animated: true)
+
+                DispatchQueue.main.async { [unowned self] in
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
             } else {
+
                 if let error = error as NSError? {
-                    print(error.userInfo["code"]!) }
+                    print(error.userInfo["code"]!)
                     let alertController = UIAlertController(title: "Error",
-                                                        message: "Game does not exist",
-                                                        preferredStyle: .alert)
+                                                            message: "Game does not exist",
+                                                            preferredStyle: .alert)
+                    
                     let retryAction = UIAlertAction(title: "Retry", style: .default, handler: nil)
                     alertController.addAction(retryAction)
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [unowned self] in
                         self.present(alertController, animated: true, completion:  nil)
                     }
                 }
+            }
         })
       
     }

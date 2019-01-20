@@ -80,7 +80,7 @@ class registerViewController: UIViewController, UITextFieldDelegate{
                 return
         }
 
-
+        user.name = nameTextField.text
         user.username = usernameTextField.text
         user.password = passwordTextField.text
         user.email = emailTextField.text

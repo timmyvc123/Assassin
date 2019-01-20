@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         Parse.initialize(with: config)
+        Game.registerSubclass()
         
         if PFUser.current() == nil {
             goTosignIn()

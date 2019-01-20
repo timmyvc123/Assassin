@@ -59,7 +59,7 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     private var state: MenuState = .hidden
 
-    var game: PFObject!
+    var game: Game!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,7 +100,7 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func signOutTapped(_ sender: Any) {
         PFUser.logOut()
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [unowned self] in
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
@@ -232,21 +232,21 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     }
     
-    @IBAction func toPlayerList(_ sender: Any) {
-         performSegue(withIdentifier: "ToPlayersSegue", sender: self)
-    }
+
+    
     
     
    
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
         if (segue.identifier == "ToPlayersSegue") {
             // initialize new view controller and cast it as your view controller
             let viewController = segue.destination as! otherUsersViewController
             // your new view controller should have property that will store passed value
 
-            let players = game["PlayerList"] as! [PFObject]
+            let players = game.players
             
 //            var playerList: [PFObject] = []
 //            for player in players {

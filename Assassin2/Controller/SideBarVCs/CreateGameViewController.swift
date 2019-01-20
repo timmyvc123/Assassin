@@ -30,14 +30,17 @@ class CreateGameViewController: UIViewController {
         
         guard gameName.text?.isEmpty == false, gamePassword.text?.isEmpty == false else { return }
         
-        var gameAttributes: [String: Any] = [:]
-        gameAttributes["GameName"] = gameName.text
-        gameAttributes["GamePassword"] = gamePassword.text
-        gameAttributes["CommissionerID"] = PFUser.current()
+        let game = Game()
         
-        PFUser.current()?.createGame(attributes: gameAttributes, result: { (game, error) in
+        game.name = gameName.text
+        game.password = gamePassword.text
+        game.commissioner = PFUser.current()
+        
+        PFUser.current()?.createGame(game, result: { (game, error) in
             if error == nil {
-                self.navigationController?.popToRootViewController(animated: false)
+                DispatchQueue.main.async { [unowned self] in
+                    self.navigationController?.popToRootViewController(animated: false)
+                }
 
 //                let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //                let viewController = storyboard.instantiateViewController(withIdentifier: "CurrentGame") as? MyGamesViewController

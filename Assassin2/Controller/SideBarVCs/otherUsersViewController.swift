@@ -12,14 +12,15 @@ import Parse
 
 class otherUsersViewController: UITableViewController {
 
-    var players: [PFObject]!
-    var playerList: [PFObject] = []
+    var players: [PFUser]! //pointers to object
+    var playerList: [PFUser] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         for player in players {
             player.fetchInBackground { (player, error) in
-                guard let player = player else { print(error!); return }
+                guard let player = player as? PFUser else { print(error!); return }
                 self.playerList.append(player)
                 self.tableView.beginUpdates()
                 self.tableView.insertRows(at: [IndexPath(row: self.playerList.count-1, section: 0)], with: .automatic)
@@ -54,7 +55,7 @@ class otherUsersViewController: UITableViewController {
         
         
 
-        cell.playerName.text = playerList[indexPath.row]["username"] as? String
+        cell.playerName.text = playerList[indexPath.row].username
 
 
         return cell
