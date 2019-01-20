@@ -14,13 +14,18 @@ class Game: PFObject {
     @NSManaged var password: String?
     @NSManaged var players: [PFUser]?
     @NSManaged var commissioner: PFObject?
-    
+    @NSManaged var hasStarted: NSNumber? //NSNumber is used to represent a bool
+
 }
 
 
 extension Game: PFSubclassing {
     static func parseClassName() -> String {
         return "Games"
+    }
+    func start() {
+        self.hasStarted = true
+        // code to assign targets
     }
 }
 

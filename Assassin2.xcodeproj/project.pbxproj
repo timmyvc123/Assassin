@@ -13,53 +13,51 @@
 		75EEB82C2199003200125AEB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEB82B2199003200125AEB /* User.swift */; };
 		75F377FF21F3F6E5003203DE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F377FE21F3F6E5003203DE /* Game.swift */; };
 		A515AEC92188E8FA00A2F2AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEC82188E8FA00A2F2AE /* AppDelegate.swift */; };
-		A515AECB2188E8FA00A2F2AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AECA2188E8FA00A2F2AE /* ViewController.swift */; };
 		A515AECE2188E8FA00A2F2AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A515AECC2188E8FA00A2F2AE /* Main.storyboard */; };
 		A515AED02188E8FC00A2F2AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A515AECF2188E8FC00A2F2AE /* Assets.xcassets */; };
 		A515AED32188E8FC00A2F2AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A515AED12188E8FC00A2F2AE /* LaunchScreen.storyboard */; };
-		A515AEDB2188EB7200A2F2AE /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEDA2188EB7200A2F2AE /* logInViewController.swift */; };
-		A515AEDD2188ED7C00A2F2AE /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEDC2188ED7C00A2F2AE /* registerViewController.swift */; };
-		A515AEDF2188EFEB00A2F2AE /* menuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */; };
-		A5D434C021B5FB9F0075B08A /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434BF21B5FB9F0075B08A /* profileViewController.swift */; };
+		A515AEDB2188EB7200A2F2AE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEDA2188EB7200A2F2AE /* LogInViewController.swift */; };
+		A515AEDD2188ED7C00A2F2AE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEDC2188ED7C00A2F2AE /* RegisterViewController.swift */; };
+		A515AEDF2188EFEB00A2F2AE /* MyGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEDE2188EFEB00A2F2AE /* MyGamesViewController.swift */; };
+		A5D434C021B5FB9F0075B08A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434BF21B5FB9F0075B08A /* ProfileViewController.swift */; };
 		A5D434C221B5FC820075B08A /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C121B5FC820075B08A /* CreateGameViewController.swift */; };
-		A5D434C421B5FC920075B08A /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C321B5FC920075B08A /* settingsViewController.swift */; };
-		A5D434C721B6018A0075B08A /* targetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C621B6018A0075B08A /* targetViewController.swift */; };
-		A5D434C921B601E00075B08A /* rulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C821B601E00075B08A /* rulesViewController.swift */; };
-		A5D434CB21B6022F0075B08A /* reportKillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434CA21B6022F0075B08A /* reportKillViewController.swift */; };
-		A5D434CD21B603A80075B08A /* otherUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434CC21B603A80075B08A /* otherUsersViewController.swift */; };
-		A5D434CF21B603C90075B08A /* calendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434CE21B603C90075B08A /* calendarViewController.swift */; };
-		A5D434D121B603EB0075B08A /* leaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434D021B603EB0075B08A /* leaderboardViewController.swift */; };
-		A5E75686219CE94600B80F90 /* MyGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E75685219CE94600B80F90 /* MyGamesViewController.swift */; };
+		A5D434C421B5FC920075B08A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C321B5FC920075B08A /* SettingsViewController.swift */; };
+		A5D434C721B6018A0075B08A /* TargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C621B6018A0075B08A /* TargetViewController.swift */; };
+		A5D434C921B601E00075B08A /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434C821B601E00075B08A /* RulesViewController.swift */; };
+		A5D434CB21B6022F0075B08A /* ReportKillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434CA21B6022F0075B08A /* ReportKillViewController.swift */; };
+		A5D434CD21B603A80075B08A /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434CC21B603A80075B08A /* PlayersViewController.swift */; };
+		A5D434CF21B603C90075B08A /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434CE21B603C90075B08A /* CalendarViewController.swift */; };
+		A5D434D121B603EB0075B08A /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D434D021B603EB0075B08A /* LeaderboardViewController.swift */; };
+		A5E75686219CE94600B80F90 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E75685219CE94600B80F90 /* GameViewController.swift */; };
 		FE46C1880C9AF253805B8F51 /* Pods_Assassin2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0E6FD5DD7B8DB1FF3E18D0 /* Pods_Assassin2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		63AC9C8021F0E28400D1A88E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = CustomView/CustomButton.swift; sourceTree = "<group>"; };
-		63AC9C8221F0E3A000D1A88E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = CustomView/CustomTextField.swift; sourceTree = "<group>"; };
+		63AC9C8021F0E28400D1A88E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		63AC9C8221F0E3A000D1A88E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		7599565E21E93A3300655747 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
 		75EEB82B2199003200125AEB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		75F377FE21F3F6E5003203DE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		9C0E6FD5DD7B8DB1FF3E18D0 /* Pods_Assassin2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assassin2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A515AEC52188E8FA00A2F2AE /* Assassin2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assassin2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A515AEC82188E8FA00A2F2AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A515AECA2188E8FA00A2F2AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A515AECD2188E8FA00A2F2AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A515AECF2188E8FC00A2F2AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A515AED22188E8FC00A2F2AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A515AED42188E8FC00A2F2AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A515AEDA2188EB7200A2F2AE /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
-		A515AEDC2188ED7C00A2F2AE /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
-		A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuViewController.swift; sourceTree = "<group>"; };
-		A5D434BF21B5FB9F0075B08A /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileViewController.swift; path = ../profileViewController.swift; sourceTree = "<group>"; };
+		A515AEDA2188EB7200A2F2AE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		A515AEDC2188ED7C00A2F2AE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A515AEDE2188EFEB00A2F2AE /* MyGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGamesViewController.swift; sourceTree = "<group>"; };
+		A5D434BF21B5FB9F0075B08A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
 		A5D434C121B5FC820075B08A /* CreateGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
-		A5D434C321B5FC920075B08A /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
-		A5D434C621B6018A0075B08A /* targetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = targetViewController.swift; sourceTree = "<group>"; };
-		A5D434C821B601E00075B08A /* rulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rulesViewController.swift; sourceTree = "<group>"; };
-		A5D434CA21B6022F0075B08A /* reportKillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reportKillViewController.swift; sourceTree = "<group>"; };
-		A5D434CC21B603A80075B08A /* otherUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = otherUsersViewController.swift; sourceTree = "<group>"; };
-		A5D434CE21B603C90075B08A /* calendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarViewController.swift; sourceTree = "<group>"; };
-		A5D434D021B603EB0075B08A /* leaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leaderboardViewController.swift; sourceTree = "<group>"; };
-		A5E75685219CE94600B80F90 /* MyGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGamesViewController.swift; sourceTree = "<group>"; };
+		A5D434C321B5FC920075B08A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A5D434C621B6018A0075B08A /* TargetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetViewController.swift; sourceTree = "<group>"; };
+		A5D434C821B601E00075B08A /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
+		A5D434CA21B6022F0075B08A /* ReportKillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportKillViewController.swift; sourceTree = "<group>"; };
+		A5D434CC21B603A80075B08A /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
+		A5D434CE21B603C90075B08A /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		A5D434D021B603EB0075B08A /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		A5E75685219CE94600B80F90 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D52FC40DEB192A820FFC7BBA /* Pods-Assassin2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assassin2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assassin2/Pods-Assassin2.debug.xcconfig"; sourceTree = "<group>"; };
 		E08E6DC9F2D18C4C03409718 /* Pods-Assassin2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assassin2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assassin2/Pods-Assassin2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +81,17 @@
 				E08E6DC9F2D18C4C03409718 /* Pods-Assassin2.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		75383F8021F4ECF9008316F1 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				63AC9C8021F0E28400D1A88E /* CustomButton.swift */,
+				63AC9C8221F0E3A000D1A88E /* CustomTextField.swift */,
+				A515AEDA2188EB7200A2F2AE /* LogInViewController.swift */,
+				A515AEDC2188ED7C00A2F2AE /* RegisterViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		75F3780021F3F8A4003203DE /* Model */ = {
@@ -137,14 +146,10 @@
 		A59E728E2193AF77008CA63D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				75383F8021F4ECF9008316F1 /* Authentication */,
 				A5D434C521B600D60075B08A /* SideBarVCs */,
-				A515AECA2188E8FA00A2F2AE /* ViewController.swift */,
-				A515AEDA2188EB7200A2F2AE /* logInViewController.swift */,
-				A515AEDC2188ED7C00A2F2AE /* registerViewController.swift */,
-				A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */,
-				A5E75685219CE94600B80F90 /* MyGamesViewController.swift */,
-				63AC9C8021F0E28400D1A88E /* CustomButton.swift */,
-				63AC9C8221F0E3A000D1A88E /* CustomTextField.swift */,
+				A515AEDE2188EFEB00A2F2AE /* MyGamesViewController.swift */,
+				A5E75685219CE94600B80F90 /* GameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -152,15 +157,15 @@
 		A5D434C521B600D60075B08A /* SideBarVCs */ = {
 			isa = PBXGroup;
 			children = (
-				A5D434BF21B5FB9F0075B08A /* profileViewController.swift */,
-				A5D434CA21B6022F0075B08A /* reportKillViewController.swift */,
+				A5D434BF21B5FB9F0075B08A /* ProfileViewController.swift */,
+				A5D434CA21B6022F0075B08A /* ReportKillViewController.swift */,
 				A5D434C121B5FC820075B08A /* CreateGameViewController.swift */,
-				A5D434C321B5FC920075B08A /* settingsViewController.swift */,
-				A5D434C621B6018A0075B08A /* targetViewController.swift */,
-				A5D434C821B601E00075B08A /* rulesViewController.swift */,
-				A5D434CC21B603A80075B08A /* otherUsersViewController.swift */,
-				A5D434CE21B603C90075B08A /* calendarViewController.swift */,
-				A5D434D021B603EB0075B08A /* leaderboardViewController.swift */,
+				A5D434C321B5FC920075B08A /* SettingsViewController.swift */,
+				A5D434C621B6018A0075B08A /* TargetViewController.swift */,
+				A5D434C821B601E00075B08A /* RulesViewController.swift */,
+				A5D434CC21B603A80075B08A /* PlayersViewController.swift */,
+				A5D434CE21B603C90075B08A /* CalendarViewController.swift */,
+				A5D434D021B603EB0075B08A /* LeaderboardViewController.swift */,
 				7599565E21E93A3300655747 /* JoinGameViewController.swift */,
 			);
 			path = SideBarVCs;
@@ -289,25 +294,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				75EEB82C2199003200125AEB /* User.swift in Sources */,
-				A5D434C021B5FB9F0075B08A /* profileViewController.swift in Sources */,
+				A5D434C021B5FB9F0075B08A /* ProfileViewController.swift in Sources */,
 				63AC9C8121F0E28400D1A88E /* CustomButton.swift in Sources */,
 				7599565F21E93A3300655747 /* JoinGameViewController.swift in Sources */,
-				A515AECB2188E8FA00A2F2AE /* ViewController.swift in Sources */,
 				63AC9C8321F0E3A000D1A88E /* CustomTextField.swift in Sources */,
-				A515AEDB2188EB7200A2F2AE /* logInViewController.swift in Sources */,
+				A515AEDB2188EB7200A2F2AE /* LogInViewController.swift in Sources */,
 				A5D434C221B5FC820075B08A /* CreateGameViewController.swift in Sources */,
-				A5D434C421B5FC920075B08A /* settingsViewController.swift in Sources */,
-				A5D434CD21B603A80075B08A /* otherUsersViewController.swift in Sources */,
-				A5D434C921B601E00075B08A /* rulesViewController.swift in Sources */,
+				A5D434C421B5FC920075B08A /* SettingsViewController.swift in Sources */,
+				A5D434CD21B603A80075B08A /* PlayersViewController.swift in Sources */,
+				A5D434C921B601E00075B08A /* RulesViewController.swift in Sources */,
 				75F377FF21F3F6E5003203DE /* Game.swift in Sources */,
-				A5D434C721B6018A0075B08A /* targetViewController.swift in Sources */,
-				A5E75686219CE94600B80F90 /* MyGamesViewController.swift in Sources */,
-				A5D434CB21B6022F0075B08A /* reportKillViewController.swift in Sources */,
+				A5D434C721B6018A0075B08A /* TargetViewController.swift in Sources */,
+				A5E75686219CE94600B80F90 /* GameViewController.swift in Sources */,
+				A5D434CB21B6022F0075B08A /* ReportKillViewController.swift in Sources */,
 				A515AEC92188E8FA00A2F2AE /* AppDelegate.swift in Sources */,
-				A515AEDD2188ED7C00A2F2AE /* registerViewController.swift in Sources */,
-				A5D434CF21B603C90075B08A /* calendarViewController.swift in Sources */,
-				A5D434D121B603EB0075B08A /* leaderboardViewController.swift in Sources */,
-				A515AEDF2188EFEB00A2F2AE /* menuViewController.swift in Sources */,
+				A515AEDD2188ED7C00A2F2AE /* RegisterViewController.swift in Sources */,
+				A5D434CF21B603C90075B08A /* CalendarViewController.swift in Sources */,
+				A5D434D121B603EB0075B08A /* LeaderboardViewController.swift in Sources */,
+				A515AEDF2188EFEB00A2F2AE /* MyGamesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

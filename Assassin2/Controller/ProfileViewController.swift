@@ -1,17 +1,23 @@
 //
-//  leaderboardViewController.swift
-//  Assassin2
+//  profileViewController.swift
+//  
 //
 //  Created by Timmy Van Cauwenberge on 12/3/18.
-//  Copyright © 2018 Cowabunga Games. All rights reserved.
 //
 
 import UIKit
+import Parse
 
-class leaderboardViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
+    var user: PFUser!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        user = PFUser.current()
+        print("Name: \(String(describing: user.name))")
+        print("Username: \(String(describing: user.username))")
+        print("Email: \(String(describing: user.email))")
 
         // Do any additional setup after loading the view.
     }

@@ -31,7 +31,7 @@ extension PFUser {
     
     func createGame(_ game: Game, result: @escaping (Game?, Error?) -> ()) {
 
-    
+
         game.players = []
         
         game.saveInBackground { (success, error) in
@@ -56,6 +56,7 @@ extension PFUser {
             
             self.add(game, forKey: "games")
 //            self.games?.append(game)
+            
             
             self.saveInBackground()
             game.add(self, forKey: "players")

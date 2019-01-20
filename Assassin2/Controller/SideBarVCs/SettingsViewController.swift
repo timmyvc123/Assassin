@@ -1,5 +1,5 @@
 //
-//  calendarViewController.swift
+//  settingsViewController.swift
 //  Assassin2
 //
 //  Created by Timmy Van Cauwenberge on 12/3/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class calendarViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

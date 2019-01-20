@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 
-class otherUsersViewController: UITableViewController {
+class PlayersViewController: UITableViewController {
 
     var players: [PFUser]! //pointers to object
     var playerList: [PFUser] = []

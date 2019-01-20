@@ -35,6 +35,7 @@ class CreateGameViewController: UIViewController {
         game.name = gameName.text
         game.password = gamePassword.text
         game.commissioner = PFUser.current()
+        game.hasStarted = false
         
         PFUser.current()?.createGame(game, result: { (game, error) in
             if error == nil {

@@ -9,8 +9,8 @@
 import UIKit
 import Parse
 
-class ViewController: UIViewController, UITextFieldDelegate{
-
+class LogInViewController: UIViewController, UITextFieldDelegate{
+    
     @IBOutlet weak var usernameTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!
     
@@ -56,7 +56,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
             
             view.frame.origin.y = -keyboardRect.height
         } else {
-          view.frame.origin.y = 0
+            view.frame.origin.y = 0
         }
     }
     
@@ -95,7 +95,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
             return
         }
         
-        PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
+        PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { [unowned self] (user, error)  in
             
             if let error = error as NSError? {
                 
@@ -129,12 +129,12 @@ class ViewController: UIViewController, UITextFieldDelegate{
         backgroundImageView.image = UIImage(named: "background-screen1")
         view.sendSubview(toBack: backgroundImageView)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

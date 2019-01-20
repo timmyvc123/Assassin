@@ -1,8 +1,8 @@
 //
-//  MyGamesViewController.swift
+//  menuViewController.swift
 //  Assassin2
 //
-//  Created by Timmy Van Cauwenberge on 11/14/18.
+//  Created by Timmy Van Cauwenberge on 10/30/18.
 //  Copyright © 2018 Cowabunga Games. All rights reserved.
 //
 
@@ -10,97 +10,126 @@ import UIKit
 import Parse
 
 class MyGamesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    
+
     @IBOutlet weak var tableView: UITableView!
-    
     
     private enum MenuState {
         case hidden
         case visible
     }
     
-    // All outlets (buttons & labels)
-    
+    private var state: MenuState = .hidden
+
+    // side menu outlets
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var coverScreenButton: UIButton!
     @IBOutlet weak var menuCurveImageView: UIImageView!
     
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var createOrJoinButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var signOutButton: UIButton!
+    
+    
+ 
+    
+    // side menu label outlets
+    @IBOutlet weak var createOrJoinLabel: UILabel!
+    @IBOutlet weak var settingsLabel: UILabel!
+    @IBOutlet weak var signOutLabel: UILabel!
+
+    
+    // misc
+    @IBOutlet weak var tempButton: UIButton!
+    
     @IBOutlet weak var profileButton: UIButton!
     
-    @IBOutlet weak var targetButton: UIButton!
-    @IBOutlet weak var targetLabel: UILabel!
-    
-    @IBOutlet weak var rulesButton: UIButton!
-    @IBOutlet weak var rulesLabel: UILabel!
-    
-    @IBOutlet weak var reportKillButton: UIButton!
-    @IBOutlet weak var reportKillLabel: UILabel!
-    
-    @IBOutlet weak var usersButton: UIButton!
-    @IBOutlet weak var usersLabel: UILabel!
-    
-    @IBOutlet weak var createOrJoinButton: UIButton!
-    @IBOutlet weak var createOrJoinLabel: UILabel!
-    
-    @IBOutlet weak var calendarButton: UIButton!
-    @IBOutlet weak var calendarLabel: UILabel!
-    
-    @IBOutlet weak var leaderboardButton: UIButton!
-    @IBOutlet weak var leaderboardLabel: UILabel!
-    
-    @IBOutlet weak var settingsButton: UIButton!
-    @IBOutlet weak var settingsLabel: UILabel!
-    
-    @IBOutlet weak var signOutButton: UIButton!
-    @IBOutlet weak var signOutLabel: UILabel!
     
     
-    private var state: MenuState = .hidden
+    
+    
 
-    var game: Game!
+    
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("\(#function) for Menu")
-        self.title = game["GameName"] as? String
         menuView.isHidden = true
         coverScreenButton.isHidden = true
         menuCurveImageView.image = #imageLiteral(resourceName: "MenuCurve")
         hideMenu()
-        
+
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
+        
+
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        self.tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+
     }
+    
+    func getGames() {
+        games = []
+        tableView.reloadData()
+        if let currentUser = PFUser.current() {
+        print("Getting games")
+            currentUser.getGames() { (game) in
+                self.games.append(game)
+                self.tableView.beginUpdates()
+                self.tableView.insertRows(at: [IndexPath(row: self.games.count-1, section: 0)], with: .automatic)
+                self.tableView.endUpdates()
+            }
+        }
+    }
+    
+    @objc func handleRefresh() {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service, for example...
+        
+        // Simply adding an object to the data source for this example
+        print("Refresh")
+
+        guard let currentUser = PFUser.current() else { return }
+        
+        currentUser.getGames() { (game) in
+            if !self.games.contains(game) {
+                self.games.append(game)
+                self.tableView.beginUpdates()
+                self.tableView.insertRows(at: [IndexPath(row: self.games.count-1, section: 0)], with: .automatic)
+                self.tableView.endUpdates()
+            }
+        }
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
+    
+    var games: [Game] = []
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-//        if let currentUser = PFUser.current() {
-//            print("Getting games")
-//            GameManager().getGames(from: currentUser) { (game, error) in
-//                if let error = error {
-//                    print("*** error fetching + \(error) ***")
-//                } else if let game = game {
-//                    print("*** have profile object + id: \(game) ***")
-//                }
-//            }
-//        }
+        getGames()
         print("\(#function) for Menu")
-        
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("\(#function) for Menu")
         
+        print("\(#function) for Menu")
+
     }
     
     @IBAction func signOutTapped(_ sender: Any) {
         PFUser.logOut()
-        DispatchQueue.main.async { [unowned self] in
+        DispatchQueue.main.async {
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
@@ -111,8 +140,52 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
                          completion: nil)
             
         }
-        
     }
+    
+    
+    
+    // TABLE VIEW
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("Setting Number of Rows as \(games.count)")
+        return games.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "gameCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? TableViewCell  else {
+            fatalError("The dequeued cell is not an instance of TableViewCell")
+        }
+
+        guard let players = games[indexPath.row].players else { return cell }
+
+        cell.playerCount.text = String("Players: \(players.count)")
+        cell.gameNameLabel.text = games[indexPath.row].name
+        return cell
+    }
+    
+    var valueToPass: Game!
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Get Cell Label
+        
+        valueToPass = self.games[indexPath.row]
+        performSegue(withIdentifier: "ToGameSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ToGameSegue") {
+            // initialize new view controller and cast it as your view controller
+            let viewController = segue.destination as! GameViewController
+            // your new view controller should have property that will store passed value
+            viewController.game = valueToPass
+        }
+    }
+
+    
+    
     @IBAction func menuTapped(_ sender: Any) {
         if state == .hidden {
             showMenu()
@@ -127,6 +200,7 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBAction func screenCoverTapped(_ sender: Any) {
         hideMenu()
         state = .hidden
+
     }
     
     func showMenu() {
@@ -144,29 +218,22 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.menuCurveImageView.transform = .identity
         })
-        
+    
         UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: {
-            self.showIcon(button: self.usersButton, label: self.usersLabel)
             self.showIcon(button: self.createOrJoinButton, label: self.createOrJoinLabel)
+            
+            self.showIcon(button: self.settingsButton, label: self.settingsLabel)
+
         })
         
         UIView.animate(withDuration: 0.4, delay: 0.1, options: [.curveEaseOut, .allowUserInteraction], animations: {
-            self.showIcon(button: self.rulesButton, label: self.rulesLabel)
-            self.showIcon(button: self.reportKillButton, label: self.reportKillLabel)
-            
-            self.showIcon(button: self.calendarButton, label: self.calendarLabel)
-            self.showIcon(button: self.leaderboardButton, label: self.leaderboardLabel)
-        })
-        
-        UIView.animate(withDuration: 0.4, delay: 0.2, options: [.curveEaseOut, .allowUserInteraction], animations: {
             self.profileImageView.transform = .identity
             self.profileButton.transform = .identity
-            self.showIcon(button: self.targetButton, label: self.targetLabel)
-            
-            self.showIcon(button: self.settingsButton, label: self.settingsLabel)
             self.showIcon(button: self.signOutButton, label: self.signOutLabel)
         })
+
     }
+    
     func hideMenu() {
         // side menu goes away
         UIView.animate(withDuration: 0.7) {
@@ -176,28 +243,20 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
         UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: {
             self.profileImageView.transform = CGAffineTransform(translationX: +self.menuView.frame.width, y: 0)
             self.profileButton.transform = CGAffineTransform(translationX: +self.menuView.frame.width, y: 0)
-            self.hideIcon(button: self.targetButton, label: self.targetLabel)
             
-            self.hideIcon(button: self.settingsButton, label: self.settingsLabel)
             self.hideIcon(button: self.signOutButton, label: self.signOutLabel)
+            
         })
         
         UIView.animate(withDuration: 0.4, delay: 0.1, options: [.curveEaseOut, .allowUserInteraction], animations: {
-            self.hideIcon(button: self.rulesButton, label: self.rulesLabel)
-            self.hideIcon(button: self.reportKillButton, label: self.reportKillLabel)
+            self.hideIcon(button: self.settingsButton, label: self.settingsLabel)
             
-            self.hideIcon(button: self.calendarButton, label: self.calendarLabel)
-            self.hideIcon(button: self.leaderboardButton, label: self.leaderboardLabel)
+            self.hideIcon(button: self.createOrJoinButton, label: self.createOrJoinLabel)
         })
         
         // menuCurveImage goes away (provides bubble animation)
         UIView.animate(withDuration: 0.4, delay: 0.2, options: .curveEaseOut, animations: {
             self.menuCurveImageView.transform = CGAffineTransform(translationX: +self.menuCurveImageView.frame.width, y: 0)
-        })
-        
-        UIView.animate(withDuration: 0.4, delay: 0.2, options: [.curveEaseOut, .allowUserInteraction], animations: {
-            self.hideIcon(button: self.usersButton, label: self.usersLabel)
-            self.hideIcon(button: self.createOrJoinButton, label: self.createOrJoinLabel)
             
         }) { success in
             self.menuView.isHidden = true
@@ -217,65 +276,30 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
-    // TABLE VIEW
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "messageCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MessageTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of TableViewCell")
-        }
-        cell.messageLabel.text = "Message"
-        return cell
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
 
-    
-    
-    
-   
-
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if (segue.identifier == "ToPlayersSegue") {
-            // initialize new view controller and cast it as your view controller
-            let viewController = segue.destination as! otherUsersViewController
-            // your new view controller should have property that will store passed value
-
-            let players = game.players
-            
-//            var playerList: [PFObject] = []
-//            for player in players {
-//                player.fetchInBackground { (player, error) in
-//                    guard let player = player else { print(error!); return }
-//                    playerList.append(player)
-//                }
-//            }
-//
-            viewController.players = players
-        }
-    }
-
-    
     /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: + Navigation
+
+    // In a storyboard+based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
+class TableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var gameNameLabel: UILabel!
+    @IBOutlet weak var playerCount: UILabel!
+
+    
     
 }
 
-class MessageTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var messageLabel: UILabel!
-    
-    
-}

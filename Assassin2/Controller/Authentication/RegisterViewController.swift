@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class registerViewController: UIViewController, UITextFieldDelegate{
+class RegisterViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!

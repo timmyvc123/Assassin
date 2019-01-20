@@ -1,5 +1,5 @@
 //
-//  reportKillViewController.swift
+//  targetViewController.swift
 //  Assassin2
 //
 //  Created by Timmy Van Cauwenberge on 12/3/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class reportKillViewController: UIViewController {
+class TargetViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
