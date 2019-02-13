@@ -11,9 +11,17 @@ import Parse
 
 class CreateGameViewController: UIViewController {
 
+    
+    @IBOutlet weak var rulesTable: UITableView!
+    var rules: [String] = []
+
+    @IBOutlet weak var gamePassword: UITextField!
+    @IBOutlet weak var gameName: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        rulesTable.dataSource = self
+        rulesTable.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -23,8 +31,6 @@ class CreateGameViewController: UIViewController {
     }
     
 
-    @IBOutlet weak var gamePassword: UITextField!
-    @IBOutlet weak var gameName: UITextField!
 
     @IBAction func createGame(_ sender: Any) {
         
@@ -67,3 +73,67 @@ class CreateGameViewController: UIViewController {
     */
 
 }
+
+extension CreateGameViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return rules.count + 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "rule"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CreateGameTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of TableViewCell")
+        }
+        
+        cell.addFieldButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: UIControlEvents.touchUpInside)
+        
+        cell.removeFieldButton.addTarget(self, action: #selector(removeButtonPressed(sender:)), for: UIControlEvents.touchUpInside)
+        
+        
+        cell.ruleNameTextField.addTarget(self, action: #selector(fieldTextEntered(sender:)), for: .editingChanged)
+        return cell
+    }
+    
+    @objc func fieldTextEntered(sender: UITextField) {
+        if sender.text == "" {
+            print("Delete")
+            
+        }
+    }
+    
+    @objc func removeButtonPressed(sender: UIButton) {
+        self.rules.remove(at: 0)
+        self.rulesTable.beginUpdates()
+        self.rulesTable.insertRows(at: [IndexPath(row: self.rules.count, section: 0)], with: .automatic)
+        self.rulesTable.endUpdates()
+        
+        
+    }
+    
+    @objc func buttonPressed(sender: UIButton) {
+        self.rules.append("rule")
+        self.rulesTable.beginUpdates()
+        self.rulesTable.insertRows(at: [IndexPath(row: self.rules.count, section: 0)], with: .automatic)
+        self.rulesTable.endUpdates()
+    }
+    
+}
+
+class CreateGameTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var removeFieldButton: UIButton!
+    @IBOutlet weak var ruleNameTextField: UITextField!
+    @IBOutlet weak var addFieldButton: UIButton!
+    
+    var index: Int?
+    
+    @IBAction func addFieldButtonPressed(_ sender: Any) {
+        print(#function)
+
+        addFieldButton.isHidden = true
+        removeFieldButton.isHidden = false
+        ruleNameTextField.isHidden = false
+
+    }
+}
+
