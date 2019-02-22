@@ -71,20 +71,35 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
             tableView.addSubview(refreshControl)
         }
         self.tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-
+        
     }
     
     func getGames() {
         games = []
         tableView.reloadData()
         if let currentUser = PFUser.current() {
-        print("Getting games")
-            currentUser.getGames() { (game) in
-                self.games.append(game)
-                self.tableView.beginUpdates()
-                self.tableView.insertRows(at: [IndexPath(row: self.games.count-1, section: 0)], with: .automatic)
-                self.tableView.endUpdates()
-            }
+            
+            
+        let game = Game()
+        
+        game.name = "gameName.text"
+        game.password = "gamePassword.text"
+        game.commissioner = PFUser.current()
+            print("**************************************")
+
+            print(game.hasStarted)
+        game.hasStarted = true
+            print(game.hasStarted)
+            print("**************************************")
+
+            
+//        print("Getting games")
+//            currentUser.getGames() { (game) in
+//                self.games.append(game)
+//                self.tableView.beginUpdates()
+//                self.tableView.insertRows(at: [IndexPath(row: self.games.count-1, section: 0)], with: .automatic)
+//                self.tableView.endUpdates()
+//            }
         }
     }
     

@@ -9,21 +9,33 @@
 import Foundation
 import Parse.PFObject
 
+
 class Game: PFObject {
     
     //game.name is the same as game["name"]
     
     @NSManaged var name: String?
     @NSManaged var password: String?
-    @NSManaged var players: [PFUser]?
+    @NSManaged var players: [Player]?
     @NSManaged var commissioner: PFObject?
     @NSManaged var hasStarted: NSNumber? //NSNumber is used to represent a bool
 
+    
+    override init() {
+        super.init()
+        hasStarted = true
+    }
     func start() {
         self.hasStarted = true
-        // code to assign targets
-        self.players?.randomElement()
 
+        guard let players = players?.shuffled() else { return }
+        
+        for i in 0...players.count {
+            if players[i] == players.last {
+                players[i].target = players.first
+            }
+            players[i].target = players[i + 1]
+        }
     }
 }
 

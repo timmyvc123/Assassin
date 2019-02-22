@@ -12,7 +12,7 @@ import Parse
 
 class PlayersViewController: UITableViewController {
 
-    var players: [PFUser]! //pointers to object
+    var players: [Player]! //pointers to object
     var playerList: [PFUser] = []
     
     override func viewDidLoad() {

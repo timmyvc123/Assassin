@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		63AC9C8121F0E28400D1A88E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC9C8021F0E28400D1A88E /* CustomButton.swift */; };
 		63AC9C8321F0E3A000D1A88E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC9C8221F0E3A000D1A88E /* CustomTextField.swift */; };
+		756E4D7F2213B81D009F3346 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756E4D7E2213B81D009F3346 /* Player.swift */; };
 		7599565F21E93A3300655747 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7599565E21E93A3300655747 /* JoinGameViewController.swift */; };
 		75EEB82C2199003200125AEB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEB82B2199003200125AEB /* User.swift */; };
 		75F377FF21F3F6E5003203DE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F377FE21F3F6E5003203DE /* Game.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		63AC9C8021F0E28400D1A88E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		63AC9C8221F0E3A000D1A88E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		756E4D7E2213B81D009F3346 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		7599565E21E93A3300655747 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
 		75EEB82B2199003200125AEB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		75F377FE21F3F6E5003203DE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				75F377FE21F3F6E5003203DE /* Game.swift */,
 				75EEB82B2199003200125AEB /* User.swift */,
+				756E4D7E2213B81D009F3346 /* Player.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				A515AEDB2188EB7200A2F2AE /* LogInViewController.swift in Sources */,
 				A5D434C221B5FC820075B08A /* CreateGameViewController.swift in Sources */,
 				A5D434C421B5FC920075B08A /* SettingsViewController.swift in Sources */,
+				756E4D7F2213B81D009F3346 /* Player.swift in Sources */,
 				A5D434CD21B603A80075B08A /* PlayersViewController.swift in Sources */,
 				A5D434C921B601E00075B08A /* RulesViewController.swift in Sources */,
 				75F377FF21F3F6E5003203DE /* Game.swift in Sources */,
