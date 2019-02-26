@@ -58,7 +58,7 @@ class GameViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     private var state: MenuState = .hidden
-
+    
     var game: Game!
     
     override func viewDidLoad() {
@@ -69,6 +69,7 @@ class GameViewController: UIViewController, UITableViewDataSource, UITableViewDe
         coverScreenButton.isHidden = true
         menuCurveImageView.image = #imageLiteral(resourceName: "MenuCurve")
         hideMenu()
+        updateMenuImage()
         
         // Do any additional setup after loading the view.
         tableView.dataSource = self
@@ -78,16 +79,16 @@ class GameViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        if let currentUser = PFUser.current() {
-//            print("Getting games")
-//            GameManager().getGames(from: currentUser) { (game, error) in
-//                if let error = error {
-//                    print("*** error fetching + \(error) ***")
-//                } else if let game = game {
-//                    print("*** have profile object + id: \(game) ***")
-//                }
-//            }
-//        }
+        //        if let currentUser = PFUser.current() {
+        //            print("Getting games")
+        //            GameManager().getGames(from: currentUser) { (game, error) in
+        //                if let error = error {
+        //                    print("*** error fetching + \(error) ***")
+        //                } else if let game = game {
+        //                    print("*** have profile object + id: \(game) ***")
+        //                }
+        //            }
+        //        }
         print("\(#function) for Menu")
         
     }
@@ -229,47 +230,57 @@ class GameViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         cell.messageLabel.text = "Message"
         return cell
-    
+        
     }
     
-
     
     
     
-   
-
-
+    
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
         if (segue.identifier == "ToPlayersSegue") {
             // initialize new view controller and cast it as your view controller
             let viewController = segue.destination as! PlayersViewController
             // your new view controller should have property that will store passed value
-
+            
             let players = game.players
             
-//            var playerList: [PFObject] = []
-//            for player in players {
-//                player.fetchInBackground { (player, error) in
-//                    guard let player = player else { print(error!); return }
-//                    playerList.append(player)
-//                }
-//            }
-//
+            //            var playerList: [PFObject] = []
+            //            for player in players {
+            //                player.fetchInBackground { (player, error) in
+            //                    guard let player = player else { print(error!); return }
+            //                    playerList.append(player)
+            //                }
+            //            }
+            //
             viewController.players = players
         }
     }
-
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func updateMenuImage() {
+        if let query = PFUser.query(){
+            
+            query.findObjectsInBackground { (objects, error) in
+                if let users = objects {
+                    for object in users {
+                        if let user = object as? PFUser {
+                            if let imageFile = user["photo"] as? PFFile {
+                                imageFile.getDataInBackground(block: { (data, error) in
+                                    if let imageData = data {
+                                        self.profileImageView.image = UIImage(data: imageData)
+                                    }
+                                })
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     
 }
 
