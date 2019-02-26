@@ -44,17 +44,11 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var profileButton: UIButton!
     
-    
-    
-    
-    
-
-    
     private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\(#function) for Menu")
+        print(String(describing: self) + ": " + #function)
         menuView.isHidden = true
         coverScreenButton.isHidden = true
         menuCurveImageView.image = #imageLiteral(resourceName: "MenuCurve")
@@ -79,27 +73,13 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.reloadData()
         if let currentUser = PFUser.current() {
             
-            
-        let game = Game()
-        
-        game.name = "gameName.text"
-        game.password = "gamePassword.text"
-        game.commissioner = PFUser.current()
-            print("**************************************")
-
-            print(game.hasStarted)
-        game.hasStarted = true
-            print(game.hasStarted)
-            print("**************************************")
-
-            
-//        print("Getting games")
-//            currentUser.getGames() { (game) in
-//                self.games.append(game)
-//                self.tableView.beginUpdates()
-//                self.tableView.insertRows(at: [IndexPath(row: self.games.count-1, section: 0)], with: .automatic)
-//                self.tableView.endUpdates()
-//            }
+        print("Getting games")
+            currentUser.getGames() { (game) in
+                self.games.append(game)
+                self.tableView.beginUpdates()
+                self.tableView.insertRows(at: [IndexPath(row: self.games.count-1, section: 0)], with: .automatic)
+                self.tableView.endUpdates()
+            }
         }
     }
     
@@ -174,7 +154,7 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
             fatalError("The dequeued cell is not an instance of TableViewCell")
         }
 
-        guard let players = games[indexPath.row].players else { return cell }
+        let players = games[indexPath.row].players
 
         cell.playerCount.text = String("Players: \(players.count)")
         cell.gameNameLabel.text = games[indexPath.row].name
