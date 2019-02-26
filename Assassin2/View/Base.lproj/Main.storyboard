@@ -447,37 +447,21 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAF-LN-T5R">
                                 <rect key="frame" x="77" y="64" width="298" height="603"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SQF-xR-mzj">
-                                        <rect key="frame" x="-185" y="0.0" width="483" height="603"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="U0t-NI-8zG">
                                         <rect key="frame" x="8" y="28" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SQF-xR-mzj">
+                                        <rect key="frame" x="-93" y="0.0" width="483" height="603"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="NeF-j8-7xU">
                                         <rect key="frame" x="47" y="51" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrR-o0-njm">
-                                        <rect key="frame" x="298" y="51" width="104" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="target"/>
-                                        <connections>
-                                            <segue destination="qmF-p7-Pwm" kind="show" id="Tek-tw-drT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9B-eh-vvu">
-                                        <rect key="frame" x="47" y="603" width="64" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="rules"/>
-                                        <connections>
-                                            <segue destination="X7E-pY-n5y" kind="show" id="RMB-5j-SxS"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ql-Xr-dvB">
                                         <rect key="frame" x="54" y="293" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -553,14 +537,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZb-2v-fjX">
-                                        <rect key="frame" x="52" y="406" width="54" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="calendar"/>
-                                        <connections>
-                                            <segue destination="XGf-UA-ttu" kind="show" id="Q0Q-Hh-IBo"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calendar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNZ-jr-B9l">
                                         <rect key="frame" x="44" y="464" width="69" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -574,6 +550,14 @@
                                         <state key="normal" image="settings"/>
                                         <connections>
                                             <segue destination="N8h-ft-wrn" kind="show" id="idu-d3-nRt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZb-2v-fjX">
+                                        <rect key="frame" x="52" y="406" width="54" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="calendar"/>
+                                        <connections>
+                                            <segue destination="XGf-UA-ttu" kind="show" id="Q0Q-Hh-IBo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xe-0Y-g1T">
@@ -605,8 +589,21 @@
                                         <state key="normal" title="Profile">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPH-67-7DN">
+                                        <rect key="frame" x="189" y="51" width="52" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="target"/>
                                         <connections>
-                                            <segue destination="a1W-4f-94V" kind="show" id="u27-KA-NKc"/>
+                                            <segue destination="qmF-p7-Pwm" kind="show" id="LgO-Cc-xnd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faB-2z-QOs">
+                                        <rect key="frame" x="44" y="173" width="56" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="rules"/>
+                                        <connections>
+                                            <segue destination="X7E-pY-n5y" kind="show" id="RZD-GA-GXt"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -653,14 +650,14 @@
                         <outlet property="profileImageView" destination="NeF-j8-7xU" id="EN2-Lw-Gs6"/>
                         <outlet property="reportKillButton" destination="8Xe-0Y-g1T" id="FHm-3h-4LK"/>
                         <outlet property="reportKillLabel" destination="Jtp-Wh-CVD" id="Kbg-hB-Ia5"/>
-                        <outlet property="rulesButton" destination="I9B-eh-vvu" id="RlX-bV-dBg"/>
+                        <outlet property="rulesButton" destination="faB-2z-QOs" id="eC4-5U-csV"/>
                         <outlet property="rulesLabel" destination="fma-jB-SWS" id="osh-dM-SPD"/>
                         <outlet property="settingsButton" destination="6nj-aj-DWa" id="fN6-cl-1tP"/>
                         <outlet property="settingsLabel" destination="MOb-pF-c9H" id="Vef-cu-Kye"/>
                         <outlet property="signOutButton" destination="QB2-tP-cTZ" id="a4m-C6-9fl"/>
                         <outlet property="signOutLabel" destination="ZvM-cX-Jsx" id="9t0-lg-lgf"/>
                         <outlet property="tableView" destination="ibT-Le-aTH" id="7Ss-LN-UiG"/>
-                        <outlet property="targetButton" destination="NrR-o0-njm" id="xOh-IG-x8Z"/>
+                        <outlet property="targetButton" destination="pPH-67-7DN" id="FmU-k7-xg2"/>
                         <outlet property="targetLabel" destination="1uW-5J-me9" id="CH0-Ct-qf7"/>
                         <outlet property="usersButton" destination="8ql-Xr-dvB" id="LfP-he-tU2"/>
                         <outlet property="usersLabel" destination="M4f-N5-H5I" id="tk9-5u-vZ6"/>
@@ -668,7 +665,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Swm-d3-jqN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2929" y="-868"/>
+            <point key="canvasLocation" x="2928.8000000000002" y="-868.51574212893559"/>
         </scene>
         <!--My Games View Controller-->
         <scene sceneID="qpn-uT-Sfr">
@@ -1006,18 +1003,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="qk3-DM-GiC">
-                                <rect key="frame" x="41" y="106" width="292" height="218"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="qk3-DM-GiC">
+                                <rect key="frame" x="41" y="106" width="293" height="218"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="218" id="P9S-Bz-gLC"/>
+                                </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6y-cv-UA0">
+                                <rect key="frame" x="110.5" y="361" width="154" height="30"/>
+                                <state key="normal" title="Change Profile Picture"/>
+                                <connections>
+                                    <action selector="updateProfileTapped:" destination="a1W-4f-94V" eventType="touchUpInside" id="TqS-gq-vAW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdR-Pa-bcW">
+                                <rect key="frame" x="162" y="439" width="51" height="30"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="updateTapped:" destination="a1W-4f-94V" eventType="touchUpInside" id="1TQ-5p-zMH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh7-wc-ux3">
+                                <rect key="frame" x="167" y="493" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.1616471693" blue="0.15034651039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gh7-wc-ux3" firstAttribute="top" secondItem="MdR-Pa-bcW" secondAttribute="bottom" constant="24" id="2ci-Tx-nlo"/>
+                            <constraint firstItem="gh7-wc-ux3" firstAttribute="centerX" secondItem="MdR-Pa-bcW" secondAttribute="centerX" id="69G-Iz-Mbd"/>
+                            <constraint firstItem="gh7-wc-ux3" firstAttribute="leading" secondItem="Swg-wB-fqi" secondAttribute="leading" constant="167" id="6hM-zG-4wu"/>
+                            <constraint firstItem="qk3-DM-GiC" firstAttribute="centerX" secondItem="MdR-Pa-bcW" secondAttribute="centerX" id="JjG-u9-5Pv"/>
+                            <constraint firstItem="MdR-Pa-bcW" firstAttribute="top" secondItem="U6y-cv-UA0" secondAttribute="bottom" constant="48" id="Mob-jo-eF5"/>
+                            <constraint firstItem="gh7-wc-ux3" firstAttribute="centerX" secondItem="cyx-oK-m31" secondAttribute="centerX" id="YhI-wi-nYc"/>
+                            <constraint firstItem="U6y-cv-UA0" firstAttribute="top" secondItem="qk3-DM-GiC" secondAttribute="bottom" constant="37" id="a9U-vn-epv"/>
+                            <constraint firstItem="gh7-wc-ux3" firstAttribute="centerX" secondItem="U6y-cv-UA0" secondAttribute="centerX" id="h7I-8F-fEB"/>
+                            <constraint firstItem="qk3-DM-GiC" firstAttribute="leading" secondItem="Swg-wB-fqi" secondAttribute="leading" constant="41" id="rfx-W0-qeZ"/>
+                            <constraint firstItem="Swg-wB-fqi" firstAttribute="bottom" secondItem="gh7-wc-ux3" secondAttribute="bottom" constant="153" id="vLv-D5-Dqv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Swg-wB-fqi"/>
                     </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="gh7-wc-ux3" id="A6q-jv-GGT"/>
+                        <outlet property="profileButton" destination="U6y-cv-UA0" id="aoj-gS-gqi"/>
+                        <outlet property="profileImageView" destination="qk3-DM-GiC" id="hkx-MG-JeP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iiq-4y-Kb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="878"/>
+            <point key="canvasLocation" x="1580" y="877.51124437781118"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="WuJ-xx-huz">
@@ -1055,8 +1091,7 @@
         <image name="users" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1Ak-1G-ZRt"/>
-        <segue reference="m0D-CN-W4t"/>
-        <segue reference="sPE-SF-bb1"/>
+        <segue reference="idu-d3-nRt"/>
+        <segue reference="hcY-AZ-3ym"/>
     </inferredMetricsTieBreakers>
 </document>

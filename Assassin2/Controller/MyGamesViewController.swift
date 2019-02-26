@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 class MyGamesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     private enum MenuState {
@@ -19,7 +19,7 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     private var state: MenuState = .hidden
-
+    
     // side menu outlets
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var coverScreenButton: UIButton!
@@ -31,13 +31,13 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var signOutButton: UIButton!
     
     
- 
+    
     
     // side menu label outlets
     @IBOutlet weak var createOrJoinLabel: UILabel!
     @IBOutlet weak var settingsLabel: UILabel!
     @IBOutlet weak var signOutLabel: UILabel!
-
+    
     
     // misc
     @IBOutlet weak var tempButton: UIButton!
@@ -48,7 +48,7 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     
-
+    
     
     private let refreshControl = UIRefreshControl()
     
@@ -59,26 +59,28 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
         coverScreenButton.isHidden = true
         menuCurveImageView.image = #imageLiteral(resourceName: "MenuCurve")
         hideMenu()
-
+        updateMenuImage()
+        
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
         
-
+        
+        
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshControl
         } else {
             tableView.addSubview(refreshControl)
         }
         self.tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-
+        
     }
     
     func getGames() {
         games = []
         tableView.reloadData()
         if let currentUser = PFUser.current() {
-        print("Getting games")
+            print("Getting games")
             currentUser.getGames() { (game) in
                 self.games.append(game)
                 self.tableView.beginUpdates()
@@ -94,7 +96,7 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
         
         // Simply adding an object to the data source for this example
         print("Refresh")
-
+        
         guard let currentUser = PFUser.current() else { return }
         
         currentUser.getGames() { (game) in
@@ -117,14 +119,14 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewWillAppear(animated)
         getGames()
         print("\(#function) for Menu")
-
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         print("\(#function) for Menu")
-
+        
     }
     
     @IBAction func signOutTapped(_ sender: Any) {
@@ -158,16 +160,16 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? TableViewCell  else {
             fatalError("The dequeued cell is not an instance of TableViewCell")
         }
-
+        
         guard let players = games[indexPath.row].players else { return cell }
-
+        
         cell.playerCount.text = String("Players: \(players.count)")
         cell.gameNameLabel.text = games[indexPath.row].name
         return cell
     }
     
     var valueToPass: Game!
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Get Cell Label
         
@@ -183,7 +185,7 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
             viewController.game = valueToPass
         }
     }
-
+    
     
     
     @IBAction func menuTapped(_ sender: Any) {
@@ -200,7 +202,7 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBAction func screenCoverTapped(_ sender: Any) {
         hideMenu()
         state = .hidden
-
+        
     }
     
     func showMenu() {
@@ -218,12 +220,12 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.menuCurveImageView.transform = .identity
         })
-    
+        
         UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: {
             self.showIcon(button: self.createOrJoinButton, label: self.createOrJoinLabel)
             
             self.showIcon(button: self.settingsButton, label: self.settingsLabel)
-
+            
         })
         
         UIView.animate(withDuration: 0.4, delay: 0.1, options: [.curveEaseOut, .allowUserInteraction], animations: {
@@ -231,7 +233,7 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
             self.profileButton.transform = .identity
             self.showIcon(button: self.signOutButton, label: self.signOutLabel)
         })
-
+        
     }
     
     func hideMenu() {
@@ -276,30 +278,37 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func updateMenuImage() {
+        if let query = PFUser.query(){
+            
+           query.findObjectsInBackground { (objects, error) in
+                if let users = objects {
+                    for object in users {
+                        if let user = object as? PFUser {
+                            if let imageFile = user["photo"] as? PFFile {
+                                imageFile.getDataInBackground(block: { (data, error) in
+                                    if let imageData = data {
+                                        self.profileImageView.image = UIImage(data: imageData)
+                                    }
+                                })
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
-
-    /*
-    // MARK: + Navigation
-
-    // In a storyboard+based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var gameNameLabel: UILabel!
     @IBOutlet weak var playerCount: UILabel!
-
+    
     
     
 }
+
+
 
