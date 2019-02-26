@@ -13,9 +13,15 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var storyboard: UIStoryboard = {
+        return UIStoryboard(name: "Main", bundle: nil)
+    }()
+    
+    lazy var navigationController: UINavigationController = {
+        return storyboard.instantiateViewController(withIdentifier: "NavController") as! UINavigationController
+    }()
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         let config = ParseClientConfiguration { (theConfig) in
@@ -39,16 +45,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func goTosignIn() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let navigationController = storyboard.instantiateViewController(withIdentifier: "NavController") as? UINavigationController
-
         DispatchQueue.main.async {
-            if let window = self.window {
-                print("Presenting Navigation Controller")
-                window.rootViewController?.present(navigationController!,
-                                                   animated: false,
-                                                   completion: nil)
+            self.navigationController.popToRootViewController(animated: true)
+            if let rootViewController = self.window?.rootViewController {
+                rootViewController.present(self.navigationController,
+                                           animated: false,
+                                           completion: nil)
             }
         }
     }

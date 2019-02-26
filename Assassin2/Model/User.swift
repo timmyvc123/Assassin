@@ -11,13 +11,13 @@ import Parse
 
 extension PFUser {
     @NSManaged var name: String?
-    @NSManaged var games: [Game]?
+    @NSManaged var games: [Game]
     
     func getGames(result: @escaping (Game) -> ()) {
         
-        guard let games = self.games else { return }
-        
+        print(String(describing: self) + ": " + #function)
         for game in games {
+            print(game)
             if !game.isDataAvailable {
                 print("Data is not in local storage; fetching from database")
             }
@@ -31,16 +31,15 @@ extension PFUser {
     
     func createGame(_ game: Game, result: @escaping (Game?, Error?) -> ()) {
 
+        game.commissioner = Commissioner(from: self)
 
-        game.players = []
-        
         game.saveInBackground { (success, error) in
             if success {
                 result(game, nil)
-                self.add(game, forKey: "games")
-            
+                self.games.append(game)
                 self.saveInBackground()
             } else {
+                print("Error")
                 result(nil, error)
             }
         }
@@ -50,26 +49,18 @@ extension PFUser {
         let query = Game.query()!
         
         query.getObjectInBackground(withId: gameID) { (game, error) in
-    
             guard let game = game as? Game else { result(false, error); return }
             guard game.password == gamePassword else { result(false, error); return }
             
-            self.add(game, forKey: "games")
-//            self.games?.append(game)
-            
-            
+            self.games.append(game)
             self.saveInBackground()
-            game.add(self, forKey: "players")
-//            game.players?.append(self)
             
+            game.players.append(Player(from: self))
             game.saveInBackground()
 
             result(true, nil)
         }
     }
-
-    
-    
 }
 
 

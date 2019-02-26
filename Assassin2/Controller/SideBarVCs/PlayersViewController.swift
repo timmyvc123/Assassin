@@ -12,15 +12,15 @@ import Parse
 
 class PlayersViewController: UITableViewController {
 
-    var players: [PFUser]! //pointers to object
-    var playerList: [PFUser] = []
+    var players: [Player]! //pointers to object
+    var playerList: [Player] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         for player in players {
             player.fetchInBackground { (player, error) in
-                guard let player = player as? PFUser else { print(error!); return }
+                guard let player = player as? Player else { print(error!); return }
                 self.playerList.append(player)
                 self.tableView.beginUpdates()
                 self.tableView.insertRows(at: [IndexPath(row: self.playerList.count-1, section: 0)], with: .automatic)
@@ -53,10 +53,18 @@ class PlayersViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of TableViewCell")
         }
         
-        
+        if let playerName = playerList[indexPath.row].name {
+            cell.playerName.text = playerName
 
-        cell.playerName.text = playerList[indexPath.row].username
+        } else {
+            do {
+                let name = try playerList[indexPath.row].user.fetch().username
+                cell.playerName.text = name
+            } catch let error {
+                print(error)
+            }
 
+        }
 
         return cell
     }

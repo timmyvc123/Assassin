@@ -44,17 +44,11 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var profileButton: UIButton!
     
-    
-    
-    
-    
-    
-    
     private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\(#function) for Menu")
+        print(String(describing: self) + ": " + #function)
         menuView.isHidden = true
         coverScreenButton.isHidden = true
         menuCurveImageView.image = #imageLiteral(resourceName: "MenuCurve")
@@ -80,6 +74,7 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
         games = []
         tableView.reloadData()
         if let currentUser = PFUser.current() {
+
             print("Getting games")
             currentUser.getGames() { (game) in
                 self.games.append(game)
@@ -160,9 +155,10 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? TableViewCell  else {
             fatalError("The dequeued cell is not an instance of TableViewCell")
         }
-        
-        guard let players = games[indexPath.row].players else { return cell }
-        
+
+        let players = games[indexPath.row].players
+
+
         cell.playerCount.text = String("Players: \(players.count)")
         cell.gameNameLabel.text = games[indexPath.row].name
         return cell

@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		63AC9C8121F0E28400D1A88E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC9C8021F0E28400D1A88E /* CustomButton.swift */; };
 		63AC9C8321F0E3A000D1A88E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC9C8221F0E3A000D1A88E /* CustomTextField.swift */; };
+		756E4D7F2213B81D009F3346 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756E4D7E2213B81D009F3346 /* Player.swift */; };
 		7599565F21E93A3300655747 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7599565E21E93A3300655747 /* JoinGameViewController.swift */; };
+		759CF8272220CD9100A5A5B6 /* Commissioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759CF8262220CD9100A5A5B6 /* Commissioner.swift */; };
 		75EEB82C2199003200125AEB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEB82B2199003200125AEB /* User.swift */; };
 		75F377FF21F3F6E5003203DE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F377FE21F3F6E5003203DE /* Game.swift */; };
 		A515AEC92188E8FA00A2F2AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEC82188E8FA00A2F2AE /* AppDelegate.swift */; };
@@ -35,7 +37,9 @@
 /* Begin PBXFileReference section */
 		63AC9C8021F0E28400D1A88E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		63AC9C8221F0E3A000D1A88E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		756E4D7E2213B81D009F3346 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		7599565E21E93A3300655747 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
+		759CF8262220CD9100A5A5B6 /* Commissioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commissioner.swift; sourceTree = "<group>"; };
 		75EEB82B2199003200125AEB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		75F377FE21F3F6E5003203DE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		9C0E6FD5DD7B8DB1FF3E18D0 /* Pods_Assassin2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assassin2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +103,8 @@
 			children = (
 				75F377FE21F3F6E5003203DE /* Game.swift */,
 				75EEB82B2199003200125AEB /* User.swift */,
+				756E4D7E2213B81D009F3346 /* Player.swift */,
+				759CF8262220CD9100A5A5B6 /* Commissioner.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 				TargetAttributes = {
 					A515AEC42188E8FA00A2F2AE = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -293,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759CF8272220CD9100A5A5B6 /* Commissioner.swift in Sources */,
 				75EEB82C2199003200125AEB /* User.swift in Sources */,
 				A5D434C021B5FB9F0075B08A /* ProfileViewController.swift in Sources */,
 				63AC9C8121F0E28400D1A88E /* CustomButton.swift in Sources */,
@@ -301,6 +309,7 @@
 				A515AEDB2188EB7200A2F2AE /* LogInViewController.swift in Sources */,
 				A5D434C221B5FC820075B08A /* CreateGameViewController.swift in Sources */,
 				A5D434C421B5FC920075B08A /* SettingsViewController.swift in Sources */,
+				756E4D7F2213B81D009F3346 /* Player.swift in Sources */,
 				A5D434CD21B603A80075B08A /* PlayersViewController.swift in Sources */,
 				A5D434C921B601E00075B08A /* RulesViewController.swift in Sources */,
 				75F377FF21F3F6E5003203DE /* Game.swift in Sources */,
@@ -465,7 +474,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.CowabungaGames.Assassin2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -484,7 +493,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.CowabungaGames.Assassin2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
