@@ -112,7 +112,7 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getGames()
+//        getGames()
         print("\(#function) for Menu")
         
     }
@@ -275,24 +275,32 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func updateMenuImage() {
-        if let query = PFUser.query(){
-            
-           query.findObjectsInBackground { (objects, error) in
-                if let users = objects {
-                    for object in users {
-                        if let user = object as? PFUser {
-                            if let imageFile = user["photo"] as? PFFile {
-                                imageFile.getDataInBackground(block: { (data, error) in
-                                    if let imageData = data {
-                                        self.profileImageView.image = UIImage(data: imageData)
-                                    }
-                                })
-                            }
-                        }
+            if let imageFile = PFUser.current()!["photo"] as? PFFile {
+                imageFile.getDataInBackground(block: { (data, error) in
+                    if let imageData = data {
+                        print("Image Updating")
+                        self.profileImageView.image = UIImage(data: imageData)
                     }
-                }
+                })
             }
-        }
+            
+//        if let query = PFUser.query(){
+//           query.findObjectsInBackground { (objects, error) in
+//                if let users = objects {
+//                    for object in users {
+//                        if let user = object as? PFUser {
+//                            if let imageFile = user["photo"] as? PFFile {
+//                                imageFile.getDataInBackground(block: { (data, error) in
+//                                    if let imageData = data {
+//                                        self.profileImageView.image = UIImage(data: imageData)
+//                                    }
+//                                })
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
     }
     
 }
