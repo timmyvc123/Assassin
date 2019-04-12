@@ -275,7 +275,7 @@ class MyGamesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func updateMenuImage() {
-            if let imageFile = PFUser.current()!["photo"] as? PFFile {
+            if let imageFile = PFUser.current()?["photo"] as? PFFile {
                 imageFile.getDataInBackground(block: { (data, error) in
                     if let imageData = data {
                         print("Image Updating")

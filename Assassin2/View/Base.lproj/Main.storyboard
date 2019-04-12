@@ -941,112 +941,6 @@
             </objects>
             <point key="canvasLocation" x="3367" y="878"/>
         </scene>
-        <!--Create Game View Controller-->
-        <scene sceneID="Xbe-Bc-OsB">
-            <objects>
-                <viewController id="1cz-xa-pwH" customClass="CreateGameViewController" customModule="Assassin2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YqW-qJ-YrM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Game Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fse-9g-tw2">
-                                <rect key="frame" x="123" y="141" width="129" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Game Username:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JEK-lP-xnq">
-                                <rect key="frame" x="119" y="77" width="133" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExC-8s-3bM">
-                                <rect key="frame" x="75" y="496" width="221" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Create!">
-                                    <color key="titleColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="createGame:" destination="1cz-xa-pwH" eventType="touchUpInside" id="fAI-Cl-Syv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuI-lM-MEx">
-                                <rect key="frame" x="77" y="200" width="109" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <state key="normal" title="Rules ⌄"/>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZMh-hr-MgX">
-                                <rect key="frame" x="282" y="200" width="77" height="267"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dr0-O5-Pzk">
-                                <rect key="frame" x="77" y="231" width="175" height="236"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rule" id="rL6-gn-s9d" customClass="CreateGameTableViewCell" customModule="Assassin2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="175" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rL6-gn-s9d" id="nWh-SD-3x8">
-                                            <rect key="frame" x="0.0" y="0.0" width="175" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gc7-uP-JoT">
-                                                    <rect key="frame" x="43" y="10" width="22" height="22"/>
-                                                    <connections>
-                                                        <action selector="addFieldButtonPressed:" destination="rL6-gn-s9d" eventType="touchUpInside" id="Nao-4o-HUb"/>
-                                                    </connections>
-                                                </button>
-                                                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jDc-1I-BOi">
-                                                    <rect key="frame" x="6" y="6" width="97" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uI3-0R-kfF">
-                                                    <rect key="frame" x="138" y="10" width="22" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="❌"/>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Gc7-uP-JoT" firstAttribute="centerY" secondItem="nWh-SD-3x8" secondAttribute="centerY" id="M8n-n9-nG1"/>
-                                                <constraint firstItem="Gc7-uP-JoT" firstAttribute="centerX" secondItem="nWh-SD-3x8" secondAttribute="centerX" id="dfw-89-4KA"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="addFieldButton" destination="Gc7-uP-JoT" id="aMD-Ou-8OB"/>
-                                            <outlet property="removeFieldButton" destination="uI3-0R-kfF" id="3Pz-aW-6Bb"/>
-                                            <outlet property="ruleNameTextField" destination="jDc-1I-BOi" id="QEJ-0A-CeW"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="1Xx-xD-prt"/>
-                    </view>
-                    <connections>
-                        <outlet property="gameName" destination="JEK-lP-xnq" id="HAd-Zd-Rho"/>
-                        <outlet property="gamePassword" destination="Fse-9g-tw2" id="Nke-hH-0DD"/>
-                        <outlet property="rulesTable" destination="Dr0-O5-Pzk" id="zLj-dc-qcD"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ccJ-PI-eQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4332" y="877.51124437781118"/>
-        </scene>
         <!--Profile View Controller-->
         <scene sceneID="kCu-ez-TpQ">
             <objects>
@@ -1159,74 +1053,16 @@
                                     <action selector="createGame:" destination="4RQ-zL-eJf" eventType="touchUpInside" id="KHO-ll-dwO"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58g-FL-3vE" customClass="RulesView" customModule="Assassin2" customModuleProvider="target">
-                                <rect key="frame" x="25" y="218" width="325" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcJ-OX-CnD">
-                                        <rect key="frame" x="141.5" y="14.5" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYc-tv-pb1">
-                                        <rect key="frame" x="242" y="0.0" width="46" height="50"/>
-                                        <connections>
-                                            <action selector="addRule:" destination="4RQ-zL-eJf" eventType="touchUpInside" id="Vtp-xO-Tob"/>
-                                        </connections>
-                                    </button>
-                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Rule Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lPI-Wq-a87">
-                                        <rect key="frame" x="35" y="7.5" width="200" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="9ST-sg-vUh"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="B12-PK-loj"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="5vi-cu-Tyd"/>
-                                    <constraint firstItem="vcJ-OX-CnD" firstAttribute="centerY" secondItem="58g-FL-3vE" secondAttribute="centerY" id="8cn-9y-DtA"/>
-                                    <constraint firstItem="tYc-tv-pb1" firstAttribute="leading" secondItem="vcJ-OX-CnD" secondAttribute="trailing" constant="58.5" id="NyD-Jl-kzF"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lPI-Wq-a87" secondAttribute="trailing" constant="15" id="PqR-i2-Fkv"/>
-                                    <constraint firstItem="lPI-Wq-a87" firstAttribute="centerY" secondItem="58g-FL-3vE" secondAttribute="centerY" id="QpL-2T-ES4"/>
-                                    <constraint firstItem="vcJ-OX-CnD" firstAttribute="centerX" secondItem="58g-FL-3vE" secondAttribute="centerX" id="TLB-wU-t8f"/>
-                                    <constraint firstItem="lPI-Wq-a87" firstAttribute="leading" secondItem="58g-FL-3vE" secondAttribute="leading" constant="35" id="Xg3-pQ-Jei"/>
-                                    <constraint firstAttribute="trailing" secondItem="tYc-tv-pb1" secondAttribute="trailing" constant="37" id="e8Q-fR-puo"/>
-                                    <constraint firstAttribute="bottom" secondItem="tYc-tv-pb1" secondAttribute="bottom" id="hwP-t3-SMB"/>
-                                    <constraint firstItem="tYc-tv-pb1" firstAttribute="top" secondItem="58g-FL-3vE" secondAttribute="top" id="uoN-yU-Gkk"/>
-                                </constraints>
-                            </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vzk-OT-XyE">
-                                <rect key="frame" x="25" y="269" width="325" height="246"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="MMw-ih-rg3" appends="YES" id="iwj-TP-vji"/>
-                                    <outletCollection property="gestureRecognizers" destination="aIE-Kh-2Bv" appends="YES" id="JEj-Q7-t2c"/>
-                                </connections>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vnx-jR-IAD" firstAttribute="top" secondItem="0E5-Zh-Lt5" secondAttribute="bottom" constant="50" id="04p-5p-Dvi"/>
                             <constraint firstItem="jKm-cf-dnh" firstAttribute="trailing" secondItem="vnx-jR-IAD" secondAttribute="trailing" constant="50" id="0yK-gy-0Bl"/>
-                            <constraint firstItem="58g-FL-3vE" firstAttribute="leading" secondItem="jKm-cf-dnh" secondAttribute="leading" constant="25" id="64e-Te-JZP"/>
-                            <constraint firstItem="jKm-cf-dnh" firstAttribute="trailing" secondItem="58g-FL-3vE" secondAttribute="trailing" constant="25" id="BAv-1L-e7J"/>
                             <constraint firstItem="jKm-cf-dnh" firstAttribute="bottom" secondItem="Lcp-VR-sum" secondAttribute="bottom" constant="90" id="Bet-BB-gLl"/>
                             <constraint firstItem="jKm-cf-dnh" firstAttribute="trailing" secondItem="Lcp-VR-sum" secondAttribute="trailing" constant="75" id="Hlw-i5-eNm"/>
                             <constraint firstItem="0E5-Zh-Lt5" firstAttribute="top" secondItem="jKm-cf-dnh" secondAttribute="top" constant="25" id="SQF-dB-dOQ"/>
+                            <constraint firstItem="Lcp-VR-sum" firstAttribute="top" secondItem="vnx-jR-IAD" secondAttribute="bottom" constant="324" id="Sre-R1-3cs"/>
                             <constraint firstItem="0E5-Zh-Lt5" firstAttribute="leading" secondItem="jKm-cf-dnh" secondAttribute="leading" constant="50" id="aGA-fq-4eU"/>
-                            <constraint firstItem="58g-FL-3vE" firstAttribute="top" secondItem="vnx-jR-IAD" secondAttribute="bottom" constant="19" id="bQ9-02-ldM"/>
-                            <constraint firstItem="vzk-OT-XyE" firstAttribute="top" secondItem="lPI-Wq-a87" secondAttribute="bottom" constant="8.5" id="ize-bb-DGi"/>
-                            <constraint firstItem="vzk-OT-XyE" firstAttribute="leading" secondItem="jKm-cf-dnh" secondAttribute="leading" constant="25" id="ncd-x1-mQX"/>
-                            <constraint firstItem="Lcp-VR-sum" firstAttribute="top" secondItem="vzk-OT-XyE" secondAttribute="bottom" constant="8" id="q0r-eB-6Xd"/>
-                            <constraint firstItem="jKm-cf-dnh" firstAttribute="trailing" secondItem="vzk-OT-XyE" secondAttribute="trailing" constant="25" id="q3S-GC-Gs6"/>
                             <constraint firstItem="Lcp-VR-sum" firstAttribute="leading" secondItem="jKm-cf-dnh" secondAttribute="leading" constant="75" id="qJl-jB-GpW"/>
                             <constraint firstItem="jKm-cf-dnh" firstAttribute="trailing" secondItem="0E5-Zh-Lt5" secondAttribute="trailing" constant="50" id="xFi-yJ-gER"/>
                             <constraint firstItem="vnx-jR-IAD" firstAttribute="leading" secondItem="jKm-cf-dnh" secondAttribute="leading" constant="50" id="yHl-W0-BvH"/>
@@ -1236,10 +1072,6 @@
                     <connections>
                         <outlet property="gameName" destination="0E5-Zh-Lt5" id="nBq-W3-iJw"/>
                         <outlet property="gamePassword" destination="vnx-jR-IAD" id="886-hF-YKe"/>
-                        <outlet property="ruleLabel" destination="vcJ-OX-CnD" id="MIf-6V-rhH"/>
-                        <outlet property="ruleTextField" destination="lPI-Wq-a87" id="dHa-cj-LB8"/>
-                        <outlet property="rulesHeader" destination="58g-FL-3vE" id="Pdy-dB-xc9"/>
-                        <outlet property="view" destination="58g-FL-3vE" id="J3z-Sd-NUN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2m-HO-ssh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1269,6 +1101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FzA-Ys-orl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="417" y="975"/>
         </scene>
     </scenes>
     <resources>
