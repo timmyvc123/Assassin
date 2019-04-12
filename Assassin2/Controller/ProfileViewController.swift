@@ -18,17 +18,19 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        user = PFUser.current()
-        print("Name: \(String(describing: user.name))")
-        print("Username: \(String(describing: user.username))")
-        print("Email: \(String(describing: user.email))")
-        
+        self.user = PFUser.current()
+
         errorLabel.isHidden = true
-        if let photo = PFUser.current()?["photo"] as? PFFile {
+        if let photo = user["photo"] as? PFFile {
             photo.getDataInBackground(block: { (data, error) in
                 if let imageData = data {
                     if let image = UIImage(data: imageData) {
-                        self.profileImageView.image = image;
+                        print("image loaded")
+                        DispatchQueue.main.async {
+                            self.profileImageView.image = image;
+                        }
+                    } else {
+                        print(error)
                     }
                 }
             })
@@ -40,42 +42,47 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         imagePicker.delegate = self;
         imagePicker.sourceType = .photoLibrary;
         imagePicker.allowsEditing = false;
+
         
         present(imagePicker, animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // allows user to only select UIImages as profile picture
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            profileImageView.image = image;
+        print(#function)
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                profileImageView.image = image;
+                let rootViewController = self.navigationController?.viewControllers.first as! MyGamesViewController
+                rootViewController.profileImageView.image = image
+
         }
         
         dismiss(animated: true, completion: nil)
     }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        print(#function)
+        profileImageView.image = image
+    }
+    
     @IBAction func updateTapped(_ sender: Any) {
-        
+        print(#function)
         if let image = profileImageView.image {
             
-            if let imageData = UIImagePNGRepresentation(image) {
+            if let imageData = image.pngData() {
                 
-                PFUser.current()?["photo"] = PFFile(name: "profile.png", data: imageData)
-                PFUser.current()?.saveInBackground(block: { (success, error) in
-                    if error != nil {
-                        var errorMessage = "Update Failed - Try Again"
-                        
-                        if let newError = error as NSError? {
-                            if let detailError = newError.userInfo["error"] as? String {
-                                errorMessage = detailError;
-                            }
-                        }
-                        
-                        
-                    } else {
-                        print("Update Successful!")
+                user["photo"] = PFFile(name: "profile.png", data: imageData)
+                user.saveInBackground(block: { (success, error) in
+                    guard success else {
+                        let error = error! as NSError
+                        let error_msg = error.userInfo["error"] as! String
+                        print(error_msg)
+                        return
                     }
-                })            }
-            
+                    print("Update Successful!")
+                    
+                })
+            }
         }
     }
     

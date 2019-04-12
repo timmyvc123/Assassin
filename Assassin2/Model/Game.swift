@@ -21,6 +21,7 @@ class Game: PFObject {
     @NSManaged var hasStarted: NSNumber? //NSNumber is used to represent a bool
 
     func start() {
+        guard hasStarted == false else { return }
         self.hasStarted = true
 
         players.shuffle()
